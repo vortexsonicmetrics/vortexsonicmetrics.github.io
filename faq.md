@@ -1,8 +1,12 @@
-# Vortex Sonic Metrics LLC
-## Automated B2B Multimedia Data Audits 
-### Q: What problem does Vortex Sonic Metrics solve for streaming platforms?
-A: We build automated data pipelines that cross-reference streaming play counts against time-stamped network logs. This isolates bot-farm streaming fraud and ensures platforms pay royalties on genuine human interactions.
-### Q: Does your Software guarantee specific revenue increases or streaming performance metrics?
-A: No. Vortex Sonic Metrics LLC is a data validation and diagnostic utility. We do not provide financial advice, royalty monetization strategies, or marketing guarantees. All of our software performance analysis is provided strictly for informational and structural compliance purposes. 
-### Q: How does your architecture protect client data and systems integrity?
-A: Vortex Sonic Metrics LLC is an independent contractor that manages code in version-controlled environments to ensure technical stability without changing a client's underlying core database infrastructure. 
+# Corporate Frequently Asked Questions (FAQ)
+
+### Vortex Sonic Metrics LLC | Data Routing & Logistics Division
+
+#### Q: Is Vortex Sonic Metrics LLC a licensed contractor or medical provider?
+**A: NO.** Vortex Sonic Metrics LLC is strictly a proprietary technology and data logistics infrastructure platform. We are not licensed construction contractors, electricians, HVAC mechanics, physicians, nurses, or medical providers. We do not perform physical labor, and we do not provide clinical healthcare advice. 
+
+#### Q: How does the Exclusive Territory Mapping work?
+**A: We value data integrity.** Unlike common public databases that share client inquiries with multiple competing agencies simultaneously, our infrastructure routes 100% of a localized territory's data payload directly to **one exclusive partner** to prevent market dilution.
+
+#### Q: Who is responsible for verifying licenses and insurance?
+**A: The end user.** Vortex Sonic Metrics LLC acts solely as an informational routing bridge. It is the absolute responsibility of the property owner or clinic director to independently verify the credentials, insurance policies, and licensing of any third-party technician or entity they connect with.
