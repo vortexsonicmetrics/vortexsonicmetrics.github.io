@@ -12,13 +12,12 @@
             --text-secondary: #4b5563;
             --accent: #0f172a;
             --accent-hover: #1f2937;
-  --border: #e5e7eb;
+            --border: #e5e7eb;
             --success: #10b981;
             --success-bg: #f0fdf4;
             --brand-color: #2563eb;
         }
-
-        body {
+ body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background-color: var(--bg-main);
             color: var(--text-primary);
@@ -32,12 +31,11 @@
         }
 
         .section-wrapper {
-            max-width: 760px;
+            max-width: 800px;
             width: 100%;
             margin-bottom: 35px;
-              }
-
-        /* Sophisticated Executive Header */
+        }
+  /* Executive Header */
         .brand-header {
             text-align: center;
             margin-bottom: 50px;
@@ -50,7 +48,8 @@
             color: var(--text-primary);
             margin: 0;
         }
-         .product-subtitle {
+
+        .product-subtitle {
             display: inline-block;
             font-size: 0.95rem;
             font-weight: 600;
@@ -62,6 +61,7 @@
             padding: 4px 12px;
             border-radius: 4px;
         }
+          }
 
         .description {
             color: var(--text-secondary);
@@ -78,7 +78,7 @@
             padding: 35px;
             border-radius: 12px;
             box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.03);
-             }
+        }
 
         .checkout-title {
             font-size: 1.25rem;
@@ -86,7 +86,6 @@
             letter-spacing: -0.02em;
             margin: 0 0 6px 0;
         }
-
         .price-flex {
             display: flex;
             justify-content: space-between;
@@ -109,19 +108,18 @@
             background: var(--accent);
             color: #ffffff;
             padding: 14px 30px;
-              border-radius: 6px;
+            border-radius: 6px;
             font-weight: 600;
             text-decoration: none;
             font-size: 0.95rem;
             transition: all 0.15s ease;
         }
-
         .checkout-btn:hover {
             background: var(--accent-hover);
             transform: translateY(-1px);
         }
 
-        /* Minimalist Live Demo Container */
+        /* 24/7 Calendar System Container */
         .demo-section {
             background: var(--surface);
             padding: 40px;
@@ -134,7 +132,7 @@
             font-size: 1.25rem;
             font-weight: 700;
             letter-spacing: -0.02em;
-             margin: 0 0 12px 0;
+            margin: 0 0 12px 0;
         }
 
         .demo-instruction {
@@ -144,29 +142,80 @@
             line-height: 1.6;
         }
 
-        /* Modern Calendar Interface Layout */
-        .time-grid {
+        /* Split-Panel Calendar Matrix Setup */
+        .calendar-interface {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 12px;
-             }
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+        }
 
-        .time-slot-btn {
+        @media (max-width: 650px) {
+            .calendar-interface { grid-template-columns: 1fr; }
+        }
+
+        .column-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        /* Days Selector List */
+        .days-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .day-btn {
             background: var(--surface);
             border: 1px solid var(--border);
-            color: var(--text-primary);
-            padding: 16px;
+            padding: 14px;
+            text-align: left;
             border-radius: 6px;
-            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
+            display: flex;
+            justify-content: space-between;
             transition: all 0.15s ease;
-            text-align: center;
         }
-        .time-slot-btn:hover {
+
+        .day-btn:hover, .day-btn.active {
+            border-color: var(--brand-color);
+            background: #eff6ff;
+            color: var(--brand-color);
+        }
+
+        /* Time Increments Window Container */
+        .time-slots-container {
+            max-height: 340px;
+            overflow-y: auto;
+            padding-right: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .time-row-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.15s ease;
+        }
+
+        .time-row-btn:hover {
             border-color: var(--text-primary);
             background: #fbfbfb;
-            transform: translateY(-1px);
         }
 
         .console-log {
@@ -181,8 +230,7 @@
             font-weight: 600;
             letter-spacing: 0.03em;
         }
-
-        footer {
+         footer {
             margin-top: 60px;
             text-align: center;
             font-size: 0.85rem;
@@ -191,7 +239,7 @@
             border-top: 1px solid var(--border);
             padding-top: 25px;
             width: 100%;
-            max-width: 760px;
+            max-width: 800px;
         }
 
         footer a {
@@ -208,7 +256,8 @@
     </style>
 </head>
 <body>
-    <!-- PREMIUM CORPORATE HEADLINE -->
+
+<!-- PREMIUM CORPORATE HEADLINE -->
 <div class="section-wrapper brand-header">
     Vortex Sonic Metrics LLC</h1>
     <span class="product-subtitle">CandidTime Platform</span>
@@ -230,7 +279,7 @@
             </div>
             <a href="PASTE_YOUR_STRIPE_LINK_HERE" class="checkout-btn">Activate System Node</a>
         </div>
-    </div>
+         </div>
 </div>
 
 <!-- EXECUTIVE SIMULATION MODULE -->
@@ -241,35 +290,13 @@
             Test the mechanics of our scheduling engine below. Select an open window to see how fluidly a client secures or alters a deployment slot without ever speaking with a live phone operator.
         </p>
         
-        <div class="time-grid">
-            <button class="time-slot-btn" onclick="runSystemRouting('09:00 AM Standard Node')">09:00 AM Session</button>
-            <button class="time-slot-btn" onclick="runSystemRouting('11:30 AM Standard Node')">11:30 AM Session</button>
-            <button class="time-slot-btn" onclick="runSystemRouting('02:00 PM Extended Node')">02:00 PM Session</button>
-            <button class="time-slot-btn" onclick="runSystemRouting('04:30 PM Express Node')">04:30 PM Session</button>
-        </div>
-
-        <div id="status-console" class="console-log">
-            SYSTEM LOG: READY // AWAITING INTAKE DATA PAYLOAD
-        </div>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2026 Vortex Sonic Metrics LLC. CandidTime is a proprietary enterprise software asset managed exclusively by Vortex Sonic Metrics LLC. All rights reserved.</p>
-    <p>
-        <a href="faq.html">Frequently Asked Questions (FAQ)</a> | 
-        <a href="terms.html">Terms of Service &amp; Compliance</a>
-    </p>
-</footer>
-    <script>
-    function runSystemRouting(nodeSignature) {
-        const consoleBox = document.getElementById('status-console');
-        consoleBox.style.background = 'var(--success-bg)';
-        consoleBox.style.borderColor = '#a7f3d0';
-        consoleBox.style.color = 'var(--success)';
-        consoleBox.innerHTML = 'SYSTEM LOG: SUCCESS // INGESTION PIPELINE INTEGRATED VIA ' + nodeSignature.toUpperCase();
-    }
-</script>
-
-</body>
-</html>
+        <!-- 24/7 SPLIT MATRIX ENGINE -->
+        <div class="calendar-interface">
+            <div>
+                <div class="column-title">1. Select Target Cycle Day</div>
+                <div class="days-list">
+                    <button class="day-btn active" onclick="setDay('Monday')"><span>Monday</span> <style style="font-size:0.8rem; opacity:0.7;">24 Hours Open</style></button>
+                    <button class="day-btn" onclick="setDay('Tuesday')"><span>Tuesday</span> <style style="font-size:0.8rem; opacity:0.7;">24 Hours Open</style></button>
+                    <button class="day-btn" onclick="setDay('Wednesday')"><span>Wednesday</span> <style style="font-size:0.8rem; opacity:0.7;">24 Hours Open</style></button>
+                    <button class="day-btn" onclick="setDay('Thursday')"><span>Thursday</span> <style style="font-size:0.8rem; opacity:0.7;">24 Hours Open</style></button>
+                    <button class="day-btn" onclick="setDay('Friday')"><span>Friday</span> <style style="font-size:0.8rem; opacity:0.7;">24 Hours Open</style></button>
