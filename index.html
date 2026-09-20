@@ -138,6 +138,30 @@
         </div>
         </div>
 </div>
+ <!-- INTERACTIVE WHITE-LABELED SERVICE MATRIX FEATURING ACTIVE TECH TEAMS -->
+    <div class="matrix-box">
+        <h2 style="margin-top:0; color: var(--primary);">🕹️ Live CandidTime™ Interface Simulation</h2>
+        <p style="color: var(--text); margin-bottom: 10px;">Select an operational deployment node below to test how the automated engine assigns live sessions without human interaction:</p>
+        <div class="matrix-options">
+            <div class="matrix-card active" onclick="updateSim('tech1', this)">
+                <div class="avatar" style="background: #dbeafe; color: #2563eb;">JD</div>
+                <div class="matrix-title">John D.</div>
+                <div class="matrix-desc">Emergency Dispatch Node</div>
+            </div>
+            <div class="matrix-card" onclick="updateSim('tech2', this)">
+                <div class="avatar" style="background: #d1fae5; color: #059669;">MS</div>
+                <div class="matrix-title">Marcus S.</div>
+                <div class="matrix-desc">Borough Route Manager</div>
+            </div>
+            <div class="matrix-card" onclick="updateSim('tech3', this)">
+                <div class="avatar" style="background: #fef3c7; color: #d97706;">AL</div>
+                <div class="matrix-title">Alex L.</div>
+                <div class="matrix-desc">Lead Systems Auditor</div>
+            </div>
+        </div>
+        <div id="sim-display" class="display-panel">> SYSTEM STATE: IDLE // Awaiting grid instruction token...</div>
+    </div>
+</div>
 <footer>
     <p>&copy; 2026 Vortex Sonic Metrics LLC. CandidTime™ is a proprietary software infrastructure asset operated exclusively by Vortex Sonic Metrics LLC. All rights reserved.</p>
     <div style="margin-top: 15px;">
@@ -146,4 +170,20 @@
         <a href="terms.html" style="color: var(--accent); text-decoration: underline; font-weight: 700; margin: 0 15px; font-size: 1rem;">👉 Click to View: Terms of Service & Licensing</a>
     </div>
 </footer>
+<script>
+    function updateSim(tech, element) {
+        document.querySelectorAll('.matrix-card').forEach(card => card.classList.remove('active'));
+        element.classList.add('active');
+        const display = document.getElementById('sim-display');
+        if (tech === 'tech1') {
+            display.innerHTML = `> QUERYING STATUS: John D. [Emergency Dispatch Node]<br>> CURRENT STATE: Available for Intake Allocation<br>> INBOUND TRANSACTION: Client Requests On-Site Service Window<br>> AUTOMATION FEEDBACK: Time slot successfully locked to user's Google Calendar. Push alert fired to device. [0 manual steps required]`;
+        } else if (tech === 'tech2') {
+            display.innerHTML = `> QUERYING STATUS: Marcus S. [Borough Route Manager]<br>> CURRENT STATE: Active Routing Grid Syncing<br>> INBOUND TRANSACTION: Client Requests Date-Shift Modification<br>> AUTOMATION FEEDBACK: Old allocation database line dropped. New time slot verified and updated automatically across field layout.`;
+        } else if (tech === 'tech3') {
+            display.innerHTML = `> QUERYING STATUS: Alex L. [Lead Systems Auditor]<br>> CURRENT STATE: Monitoring Seat Clearance Nodes<br>> INBOUND TRANSACTION: Client Triggered Automated Cancellation Notice<br>> AUTOMATION FEEDBACK: Appointment cell securely cleared via web server. Database node restored to global availability index immediately.`;
+        }
+    }
+    window.onload = function() { updateSim('tech1', document.querySelector('.matrix-card')); };
+</script>
 </body>
+</html>
