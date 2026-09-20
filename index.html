@@ -111,3 +111,348 @@
         </div>
 
         <div class="vertical-time-layer" id="vertical-time-tray">
+git init
+git add .
+git commit -m "Update FAQ, Terms, and CandidTime live system demo"
+git remote add origin https://github.com/your-username/vortex-sonic-metrics.git
+git branch -M main
+git push -u origin main
+<style>
+  .avatar-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .avatar-card {
+    text-align: center;
+    font-family: sans-serif;
+  }
+  .avatar-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #000;
+  }
+</style>
+
+<div class="avatar-container">
+  <!-- Elena K. -->
+  <div class="avatar-card">
+    <img 
+      class="avatar-img" 
+      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" 
+      alt="Elena K. - Nassau Commercial Electrical"
+    >
+    <h3>Elena K.</h3>
+    <p>Nassau Commercial Electrical</p>
+  </div>
+
+  <!-- Marcus T. -->
+  <div class="avatar-card">
+    <img 
+      class="avatar-img" 
+      src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=300&q=80" 
+      alt="Marcus T. - NYC Mechanical Contracting"
+    >
+    <h3>Marcus T.</h3>
+    <p>NYC Mechanical Contracting</p>
+  </div>
+
+  <!-- David R. -->
+  <div class="avatar-card">
+    <img 
+      class="avatar-img" 
+      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" 
+      alt="David R. - Suffolk Plumbing Systems"
+    >
+    <h3>David R.</h3>
+    <p>Suffolk Plumbing Systems</p>
+  </div>
+</div>
+<style>
+  :root {
+    --primary: #059669;
+    --primary-hover: #047857;
+    --bg-light: #f8fafc;
+    --text-dark: #0f172a;
+    --border: #e2e8f0;
+  }
+
+  .candidtime-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--text-dark);
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05);
+    overflow: hidden;
+  }
+
+  .b2b-info-banner {
+    background: #f1f5f9;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .b2b-info-banner h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+  }
+
+  .b2b-info-banner p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  .demo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .demo-grid { grid-template-columns: 1fr; }
+  }
+
+  .section-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+  }
+
+  /* Calendar Styling */
+  .calendar-picker {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+  }
+
+  .day-header {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #94a3b8;
+    padding-bottom: 4px;
+  }
+
+  .calendar-day {
+    padding: 10px 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .calendar-day:hover:not(.disabled) {
+    border-color: var(--primary);
+    background: #ecfdf5;
+  }
+
+  .calendar-day.selected {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+  }
+
+  .calendar-day.disabled {
+    color: #cbd5e1;
+    cursor: not-allowed;
+    background: #f8fafc;
+  }
+
+  /* Time Slot Picker */
+  .time-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+  }
+
+  .slot-btn {
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+  }
+
+  .slot-btn:hover {
+    border-color: var(--primary);
+    background: #f0fdf4;
+  }
+
+  .slot-btn.selected {
+    border-color: var(--primary);
+    background: var(--primary);
+    color: white;
+  }
+
+  .slot-btn span.badge {
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    background: #e2e8f0;
+    color: #334155;
+  }
+
+  .slot-btn.selected span.badge {
+    background: rgba(255,255,255,0.2);
+    color: white;
+  }
+
+  /* Booking Confirmation Box */
+  .confirm-bar {
+    padding: 1rem 1.5rem;
+    background: #f8fafc;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .submit-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .submit-btn:hover {
+    background: var(--primary-hover);
+  }
+
+  .submit-btn:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+  }
+</style>
+
+<div class="candidtime-container">
+  <!-- B2B Informational Overview Header -->
+  <div class="b2b-info-banner">
+    <h3>CandidTime™ Automated B2B Dispatch & Scheduling</h3>
+    <p>Empower trade contractors and enterprise clients to lock in real-time technical dispatch slots instantly. Our zero-overhead engine syncs direct calendar availability with active region units across NYC, Nassau, and Suffolk.</p>
+  </div>
+
+  <div class="demo-grid">
+    <!-- Interactive Calendar Column -->
+    <div>
+      <div class="section-title">1. Select Dispatch Date</div>
+      <div class="calendar-picker">
+        <div class="day-header">S</div>
+        <div class="day-header">M</div>
+        <div class="day-header">T</div>
+        <div class="day-header">W</div>
+        <div class="day-header">T</div>
+        <div class="day-header">F</div>
+        <div class="day-header">S</div>
+
+        <div class="calendar-day disabled">27</div>
+        <div class="calendar-day disabled">28</div>
+        <div class="calendar-day disabled">29</div>
+        <div class="calendar-day disabled">30</div>
+        <div class="calendar-day" onclick="selectDate(this, 'Oct 1, 2026')">1</div>
+        <div class="calendar-day" onclick="selectDate(this, 'Oct 2, 2026')">2</div>
+        <div class="calendar-day" onclick="selectDate(this, 'Oct 3, 2026')">3</div>
+        <div class="calendar-day" onclick="selectDate(this, 'Oct 4, 2026')">4</div>
+        <div class="calendar-day" onclick="selectDate(this, 'Oct 5, 2026')">5</div>
+        <div class="calendar-day" onclick="selectDate(this, 'Oct 6, 2026')">6</div>
+        <div class="calendar-day" onclick="selectDate(this, 'Oct 7, 2026')">7</div>
+      </div>
+    </div>
+
+    <!-- Active Time Slots Column -->
+    <div>
+      <div class="section-title">2. Choose Live Routing Block</div>
+      <div class="time-slots" id="slotContainer">
+        <div class="slot-btn" onclick="selectSlot(this, '08:00 AM - 10:00 AM')">
+          <span>08:00 AM - 10:00 AM</span>
+          <span class="badge">NYC Core</span>
+        </div>
+        <div class="slot-btn" onclick="selectSlot(this, '10:30 AM - 12:30 PM')">
+          <span>10:30 AM - 12:30 PM</span>
+          <span class="badge">Nassau Zone</span>
+        </div>
+        <div class="slot-btn" onclick="selectSlot(this, '01:30 PM - 03:30 PM')">
+          <span>01:30 PM - 03:30 PM</span>
+          <span class="badge">Suffolk Zone</span>
+        </div>
+        <div class="slot-btn" onclick="selectSlot(this, '04:00 PM - 06:00 PM')">
+          <span>04:00 PM - 06:00 PM</span>
+          <span class="badge">Express 24/7</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Action Confirmation Footbar -->
+  <div class="confirm-bar">
+    <div id="selectionSummary" style="font-size: 0.9rem; color: #475569;">
+      Select a date and time slot to preview instant booking.
+    </div>
+    <button id="bookBtn" class="submit-btn" disabled onclick="confirmBooking()">
+      1-Click Schedule
+    </button>
+  </div>
+</div>
+
+<script>
+  let activeDate = null;
+  let activeSlot = null;
+
+  function selectDate(element, dateStr) {
+    document.querySelectorAll('.calendar-day').forEach(el => el.classList.remove('selected'));
+    element.classList.add('selected');
+    activeDate = dateStr;
+    updateStatus();
+  }
+
+  function selectSlot(element, timeStr) {
+    document.querySelectorAll('.slot-btn').forEach(el => el.classList.remove('selected'));
+    element.classList.add('selected');
+    activeSlot = timeStr;
+    updateStatus();
+  }
+
+  function updateStatus() {
+    const summary = document.getElementById('selectionSummary');
+    const btn = document.getElementById('bookBtn');
+
+    if (activeDate && activeSlot) {
+      summary.innerHTML = `<strong>Selected:</strong> ${activeDate} at ${activeSlot}`;
+      btn.disabled = false;
+    } else if (activeDate) {
+      summary.innerHTML = `<strong>Selected Date:</strong> ${activeDate} — <em>Now choose a time slot</em>`;
+      btn.disabled = true;
+    } else if (activeSlot) {
+      summary.innerHTML = `<strong>Selected Time:</strong> ${activeSlot} — <em>Now select a calendar date</em>`;
+      btn.disabled = true;
+    }
+  }
+
+  function confirmBooking() {
+    alert(`Appointment Confirmed!\n\nDate: ${activeDate}\nTime Slot: ${activeSlot}\n\nAutomated dispatch notification sent via CandidTime™ Core Infrastructure.`);
+  }
+</script>            
+      
