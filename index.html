@@ -246,257 +246,86 @@
     <h3>CandidTime™ Automated B2B Dispatch & Scheduling</h3>
     <p>Empower trade contractors and enterprise clients to lock in real-time technical dispatch slots instantly. Our zero-overhead engine syncs direct calendar availability with active region units across NYC, Nassau, and Suffolk.</p>
   </div>
+<!-- UNIFIED FAQ AND TERMS OF SERVICE SECTION -->
+<div class="site-footer-sections" style="max-width: 900px; margin: 4rem auto 2rem auto; font-family: system-ui, -apple-system, sans-serif;">
+  
+  <!-- FAQ Section -->
+  <section id="faq">
+    <h2 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+      <span style="display: inline-block; width: 10px; height: 22px; background-color: #059669; border-radius: 2px;"></span>
+      Frequently Asked Questions
+    </h2>
+    <p style="font-size: 0.95rem; color: #475569; margin-top: 0; margin-bottom: 1.5rem;">
+      Common queries regarding system integration, dispatch blocks, and service licensing.
+    </p>
 
-  <div class="demo-grid">
-    <!-- Interactive Calendar Column -->
-    <div>
-      <div class="section-title">1. Select Dispatch Date</div>
-      <div class="calendar-picker">
-        <div class="day-header">S</div>
-        <div class="day-header">M</div>
-        <div class="day-header">T</div>
-        <div class="day-header">W</div>
-        <div class="day-header">T</div>
-        <div class="day-header">F</div>
-        <div class="day-header">S</div>
-
-        <div class="calendar-day disabled">27</div>
-        <div class="calendar-day disabled">28</div>
-        <div class="calendar-day disabled">29</div>
-        <div class="calendar-day disabled">30</div>
-        <div class="calendar-day" onclick="selectDate(this, 'Oct 1, 2026')">1</div>
-        <div class="calendar-day" onclick="selectDate(this, 'Oct 2, 2026')">2</div>
-        <div class="calendar-day" onclick="selectDate(this, 'Oct 3, 2026')">3</div>
-        <div class="calendar-day" onclick="selectDate(this, 'Oct 4, 2026')">4</div>
-        <div class="calendar-day" onclick="selectDate(this, 'Oct 5, 2026')">5</div>
-        <div class="calendar-day" onclick="selectDate(this, 'Oct 6, 2026')">6</div>
-        <div class="calendar-day" onclick="selectDate(this, 'Oct 7, 2026')">7</div>
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff; overflow: hidden;">
+        <button onclick="toggleFaq(this)" style="width: 100%; padding: 1.2rem; background: #ffffff; border: none; text-align: left; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>How does the setup process work for trade companies?</span>
+          <span style="color: #059669; font-size: 1.25rem; font-weight: bold;">+</span>
+        </button>
+        <div class="faq-answer" style="display: none; padding: 1rem 1.2rem 1.2rem 1.2rem; background: #f8fafc; border-top: 1px solid #e2e8f0; color: #475569; font-size: 0.95rem; line-height: 1.6;">
+          Once activated, our technical architects configure your custom CandidTime™ scheduling and routing infrastructure directly into your existing operational pipeline within 48 to 72 hours.
+        </div>
       </div>
-    </div>
 
-    <!-- Active Time Slots Column -->
-    <div>
-      <div class="section-title">2. Choose Live Routing Block</div>
-      <div class="time-slots" id="slotContainer">
-        <div class="slot-btn" onclick="selectSlot(this, '08:00 AM - 10:00 AM')">
-          <span>08:00 AM - 10:00 AM</span>
-          <span class="badge">NYC Core</span>
+      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff; overflow: hidden;">
+        <button onclick="toggleFaq(this)" style="width: 100%; padding: 1.2rem; background: #ffffff; border: none; text-align: left; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>Is there a contract or long-term commitment?</span>
+          <span style="color: #059669; font-size: 1.25rem; font-weight: bold;">+</span>
+        </button>
+        <div class="faq-answer" style="display: none; padding: 1rem 1.2rem 1.2rem 1.2rem; background: #f8fafc; border-top: 1px solid #e2e8f0; color: #475569; font-size: 0.95rem; line-height: 1.6;">
+          No. We offer a flat production license structure with a fixed monthly rate (<strong style="color: #059669;">$299/mo</strong>) and a one-time setup fee (<strong style="color: #059669;">$499</strong>). You can exit or pause your system license loop at any time.
         </div>
-        <div class="slot-btn" onclick="selectSlot(this, '10:30 AM - 12:30 PM')">
-          <span>10:30 AM - 12:30 PM</span>
-          <span class="badge">Nassau Zone</span>
-        </div>
-        <div class="slot-btn" onclick="selectSlot(this, '01:30 PM - 03:30 PM')">
-          <span>01:30 PM - 03:30 PM</span>
-          <span class="badge">Suffolk Zone</span>
-        </div>
-        <div class="slot-btn" onclick="selectSlot(this, '04:00 PM - 06:00 PM')">
-          <span>04:00 PM - 06:00 PM</span>
-          <span class="badge">Express 24/7</span>
+      </div>
+
+      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff; overflow: hidden;">
+        <button onclick="toggleFaq(this)" style="width: 100%; padding: 1.2rem; background: #ffffff; border: none; text-align: left; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
+          <span>How does CandidTime™ handle dispatch routing for field technicians?</span>
+          <span style="color: #059669; font-size: 1.25rem; font-weight: bold;">+</span>
+        </button>
+        <div class="faq-answer" style="display: none; padding: 1rem 1.2rem 1.2rem 1.2rem; background: #f8fafc; border-top: 1px solid #e2e8f0; color: #475569; font-size: 0.95rem; line-height: 1.6;">
+          The system automatically matches real-time customer bookings against active operator zones in NYC, Nassau, and Suffolk, placing requests directly into available 24/7 routing blocks without human dispatch overhead.
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Interactive Action Confirmation Footbar -->
-  <div class="confirm-bar">
-    <div id="selectionSummary" style="font-size: 0.9rem; color: #475569;">
-      Select a date and time slot to preview instant booking.
-    </div>
-    <button id="bookBtn" class="submit-btn" disabled onclick="confirmBooking()">
-      1-Click Schedule
-    </button>
-  </div>
-</div>
+  <!-- Terms of Service Section -->
+  <section id="terms" style="margin-top: 3rem;">
+    <h2 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+      <span style="display: inline-block; width: 10px; height: 22px; background-color: #059669; border-radius: 2px;"></span>
+      Terms of Service
+    </h2>
+    <p style="font-size: 0.95rem; color: #475569; margin-top: 0; margin-bottom: 1.5rem;">
+      Operating agreement and system usage guidelines for Vortex Sonic Metrics LLC assets.
+    </p>
 
-<script>
-  let activeDate = null;
-  let activeSlot = null;
+    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #059669; border-radius: 8px; padding: 1.8rem;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+        <div>
+          <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #0f172a;"><span style="color: #059669;">01.</span> License Allocation</h4>
+          <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.5;">
+            Upon payment of the <strong style="color: #059669;">$499 Setup Fee</strong> and recurring <strong style="color: #059669;">$299/month license fee</strong>, Vortex Sonic Metrics LLC grants a non-exclusive license to access and run the operational scheduling and automated routing pipeline.
+          </p>
+        </div>
 
-  function selectDate(element, dateStr) {
-    document.querySelectorAll('.calendar-day').forEach(el => el.classList.remove('selected'));
-    element.classList.add('selected');
-    activeDate = dateStr;
-    updateStatus();
-  }
+        <div>
+          <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #0f172a;"><span style="color: #059669;">02.</span> Cancellation & Refund Policy</h4>
+          <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.5;">
+            <strong>Subscription License:</strong> You may cancel your $299/mo subscription at any time. Cancellations take effect at the end of the current billing cycle, and recurring fees are non-refundable.<br><br>
+            <strong>Setup Fee:</strong> The $499 Setup Fee covers initial technical architecture configuration and becomes non-refundable once system setup begins.<br><br>
+            <strong>Dispatch Appointments:</strong> Scheduled CandidTime™ dispatch slots canceled less than 24 hours prior to the booked window are subject to a late-cancellation administrative fee.
+          </p>
+        </div>
 
-  function selectSlot(element, timeStr) {
-    document.querySelectorAll('.slot-btn').forEach(el => el.classList.remove('selected'));
-    element.classList.add('selected');
-    activeSlot = timeStr;
-    updateStatus();
-  }
-
-  function updateStatus() {
-    const summary = document.getElementById('selectionSummary');
-    const btn = document.getElementById('bookBtn');
-
-    if (activeDate && activeSlot) {
-      summary.innerHTML = `<strong>Selected:</strong> ${activeDate} at ${activeSlot}`;
-      btn.disabled = false;
-    } else if (activeDate) {
-      summary.innerHTML = `<strong>Selected Date:</strong> ${activeDate} — <em>Now choose a time slot</em>`;
-      btn.disabled = true;
-    } else if (activeSlot) {
-      summary.innerHTML = `<strong>Selected Time:</strong> ${activeSlot} — <em>Now select a calendar date</em>`;
-      btn.disabled = true;
-    }
-  }
-
-  function confirmBooking() {
-    alert(`Appointment Confirmed!\n\nDate: ${activeDate}\nTime Slot: ${activeSlot}\n\nAutomated dispatch notification sent via CandidTime™ Core Infrastructure.`);
-  }
-</script>            
-<style>
-  :root {
-    --green-accent: #059669;
-    --green-hover: #047857;
-    --green-light: #ecfdf5;
-    --text-dark: #0f172a;
-    --text-muted: #475569;
-    --border-color: #e2e8f0;
-  }
-
-  .site-footer-sections {
-    max-width: 900px;
-    margin: 4rem auto 2rem auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    color: var(--text-dark);
-  }
-
-  .section-divider {
-    border: 0;
-    height: 1px;
-    background: var(--border-color);
-    margin: 3rem 0;
-  }
-
-  .footer-heading {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .footer-heading::before {
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 24px;
-    background-color: var(--green-accent);
-    border-radius: 3px;
-  }
-
-  .footer-subheading {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-  }
         <div>
           <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #0f172a;"><span style="color: #059669;">03.</span> Security & Uptime</h4>
-          <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.5;">Vortex Sonic Metrics maintains a zero-overhead, highly resilient cloud architecture aiming for maximum runtime availability for live customer scheduling.</p>
+          <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.5;">
+            Vortex Sonic Metrics LLC maintains a zero-overhead, highly resilient cloud architecture aiming for maximum runtime availability for live customer scheduling and routing gateway processing.
+          </p>
         </div>
-      </div>
-  .faq-question {
-    width: 100%;
-    padding: 1.2rem;
-    background: none;
-    border: none;
-    text-align: left;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .faq-question .toggle-icon {
-    font-weight: bold;
-    color: var(--green-accent);
-    font-size: 1.2rem;
-    transition: transform 0.2s ease;
-  }
-
-  .faq-item.active .toggle-icon {
-    transform: rotate(45deg);
-  }
-
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    background: #f8fafc;
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    padding: 0 1.2rem;
-  }
-
-  .faq-item.active .faq-answer {
-    max-height: 200px;
-    padding: 1rem 1.2rem 1.2rem 1.2rem;
-    border-top: 1px solid var(--border-color);
-  }
-
-  /* Terms of Service Styles */
-  .terms-card {
-    background: #ffffff;
-    border: 1px solid var(--border-color);
-    border-top: 4px solid var(--green-accent);
-    border-radius: 8px;
-    padding: 1.8rem;
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
-  }
-
-  .terms-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-  }
-
-  .terms-block h4 {
-    margin: 0 0 0.5rem 0;
-    font-size: 1rem;
-    color: var(--text-dark);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
-
-  .terms-block h4 span {
-    color: var(--green-accent);
-    font-weight: 700;
-  }
-
-  .terms-block p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-
-  .terms-footer-note {
-    margin-top: 1.5rem;
-    padding-top: 1rem;
-    border-top: 1px dashed var(--border-color);
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    text-align: center;
-  }
-</style>
-
-<div class="site-footer-sections">
-  
-
-      <div class="terms-footer-note">
-        Last updated: October 2026 • Vortex Sonic Metrics NYC & Long Island Enterprise Node
       </div>
     </div>
   </section>
@@ -504,209 +333,10 @@
 
 <script>
   function toggleFaq(button) {
-    const item = button.parentElement;
-    const isActive = item.classList.contains('active');
-    
-    // Close all open FAQs
-    document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
-    
-    // Toggle clicked FAQ
-    if (!isActive) {
-      item.classList.add('active');
-    }
+    const answer = button.nextElementSibling;
+    const isVisible = answer.style.display === 'block';
+    document.querySelectorAll('.faq-answer').forEach(el => el.style.display = 'none');
+    answer.style.display = isVisible ? 'none' : 'block';
   }
-</script>      
-
-<style>
-  :root {
-    --green-accent: #059669;
-    --green-hover: #047857;
-    --border-color: #e2e8f0;
-    --text-dark: #0f172a;
-    --text-muted: #475569;
-  }
-
-  .site-footer-sections {
-    max-width: 900px;
-    margin: 4rem auto 2rem auto;
-    font-family: system-ui, -apple-system, sans-serif;
-    color: var(--text-dark);
-  }
-
-  .footer-heading {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .footer-heading::before {
-    content: '';
-    display: inline-block;
-    width: 10px;
-    height: 22px;
-    background-color: var(--green-accent);
-    border-radius: 2px;
-  }
-
-  .footer-subheading {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  /* FAQ Accordion Styling */
-  .faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .faq-item {
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background: #ffffff;
-    overflow: hidden;
-  }
-
-  .faq-question {
-    width: 100%;
-    padding: 1.2rem;
-    background: #ffffff;
-    border: none;
-    text-align: left;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .faq-question:hover {
-    background: #f8fafc;
-  }
-
-  .toggle-icon {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: var(--green-accent);
-    transition: transform 0.2s ease;
-  }
-
-  .faq-item.active .toggle-icon {
-    transform: rotate(45deg);
-  }
-
-  .faq-answer {
-    display: none;
-    padding: 1rem 1.2rem 1.2rem 1.2rem;
-    background: #f8fafc;
-    border-top: 1px solid var(--border-color);
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    line-height: 1.6;
-  }
-
-  .faq-item.active .faq-answer {
-    display: block;
-  }
-
-  /* Terms of Service Styling */
-  .terms-card {
-    background: #ffffff;
-    border: 1px solid var(--border-color);
-    border-top: 4px solid var(--green-accent);
-    border-radius: 8px;
-    padding: 1.8rem;
-    margin-top: 2rem;
-  }
-
-  .terms-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .terms-block h4 {
-    margin: 0 0 0.5rem 0;
-    font-size: 0.95rem;
-    color: var(--text-dark);
-  }
-
-  .terms-block h4 span {
-    color: var(--green-accent);
-  }
-
-  .terms-block p {
-    margin: 0;
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-  }
-</style>
-
-<div class="site-footer-sections">
-  <!-- Interactive FAQ -->
-  <section id="faq">
-    <h2 class="footer-heading">Frequently Asked Questions</h2>
-    <p class="footer-subheading">Click any question below to reveal detailed technical and operational information.</p>
-
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>How does the setup process work for trade companies?</span>
-          <span class="toggle-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          Once activated, our technical architects configure your custom CandidTime™ scheduling and routing infrastructure directly into your existing operational pipeline within 48 to 72 hours.
-        </div>
-      </div>
-n Terms of Service Section -->
-<section id="terms" style="margin-top: 3rem; max-width: 900px; margin-left: auto; margin-right: auto; font-family: system-ui, -apple-system, sans-serif;">
-  <h2 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-    <span style="display: inline-block; width: 10px; height: 22px; background-color: #059669; border-radius: 2px;"></span>
-    Terms of Service
-  </h2>
-  <p style="font-size: 0.95rem; color: #475569; margin-top: 0; margin-bottom: 1.5rem;">
-    Operating agreement and system usage guidelines for Vortex Sonic Metrics LLC assets.
-  </p>
-
-  <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #059669; border-radius: 8px; padding: 1.8rem;">
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-      <!-- Clause 01 -->
-      <div>
-        <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #0f172a;">
-          <span style="color: #059669;">01.</span> License Allocation
-        </h4>
-        <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.5;">
-          Upon payment of the <strong style="color: #059669;">$499 Setup Fee</strong> and recurring <strong style="color: #059669;">$299/month license fee</strong>, Vortex Sonic Metrics LLC grants a non-exclusive license to access and run the operational scheduling and automated routing pipeline.
-        </p>
-      </div>
-
-      <!-- Clause 02: Updated Cancellation Policy -->
-      <div>
-        <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #0f172a;">
-          <span style="color: #059669;">02.</span> Cancellation & Refund Policy
-        </h4>
-        <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.5;">
-          <strong>Subscription License:</strong> You may cancel your $299/mo subscription at any time. Cancellations take effect at the end of the current billing cycle, and recurring fees are non-refundable.<br><br>
-          <strong>Setup Fee:</strong> The $499 Setup Fee covers initial technical architecture configuration and becomes non-refundable once system setup begins.<br><br>
-          <strong>Dispatch Appointments:</strong> Scheduled CandidTime™ dispatch slots canceled less than 24 hours prior to the booked window are subject to a late-cancellation administrative fee.
-        </p>
-      </div>
-
-      <!-- Clause 03 -->
-      <div>
-        <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #0f172a;">
-          <span style="color: #059669;">03.</span> Security & Uptime
-        </h4>
-        <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.5;">
-          Vortex Sonic Metrics LLC maintains a zero-overhead, highly resilient cloud architecture aiming for maximum runtime availability for live customer scheduling and routing gateway processing.
-        </p>
-     
-     
+</script>
+  
