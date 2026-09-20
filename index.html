@@ -11,7 +11,7 @@
             --bg-card: #ffffff; --border: #e2e8f0; --success: #10b981;
             --bubble-radius: 24px; --pill-radius: 12px;
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; margin: 0; padding: 0; background-color: var(--bg-page); color: var(--text-main); }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 0; padding: 0; background-color: var(--bg-page); color: var(--text-main); -webkit-font-smoothing: antialiased; }
         header { background: var(--bg-card); padding: 20px 40px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
         .logo-text { font-size: 1.15rem; font-weight: 800; color: var(--primary); }
         .region-badge { font-size: 0.8rem; font-weight: 700; background: var(--accent-light); color: var(--accent); padding: 6px 16px; border-radius: var(--bubble-radius); }
@@ -19,42 +19,30 @@
         .bubble-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--bubble-radius); padding: 35px; box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04); margin-bottom: 30px; text-align: left; }
         .bubble-card h2 { font-size: 1.4rem; font-weight: 800; color: var(--primary); margin: 0 0 15px 0; }
         .bubble-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin: 0 0 25px 0; }
-        
-        /* CLIENT FACES STYLE BUBBLES */
         .customer-faces-container { display: flex; gap: 15px; margin: 25px 0; overflow-x: auto; padding-bottom: 10px; }
-        .face-card-bubble { background: #fafafa; border: 1px solid var(--border); border-radius: var(--bubble-radius); padding: 15px; display: flex; align-items: center; gap: 15px; min-width: 240px; flex-shrink: 0; }
-        .face-img { width: 55px; height: 55px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); }
-        .face-info-text h4 { margin: 0 0 2px 0; font-size: 0.9rem; color: var(--primary); font-weight: 700; }
-        .face-info-text p { margin: 0; font-size: 0.75rem; color: var(--text-muted); }
-         .pricing-bubble { background: var(--bg-page); border-radius: var(--pill-radius); padding: 20px; margin-bottom: 25px; }
+        .face-card-bubble { background: #fafafa; border: 1px solid var(--border); border-radius: var(--bubble-radius); padding: 15px; display: flex; align-items: center; gap: 15px; min-width: 250px; flex-shrink: 0; }
+        .face-img { width: 55px; height: 55px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent); background-color: #cbd5e1; }
+        .pricing-bubble { background: var(--bg-page); border-radius: var(--pill-radius); padding: 20px; margin-bottom: 25px; }
         .pricing-value { font-size: 1.75rem; font-weight: 800; color: var(--primary); }
         .checkout-bubble-btn { display: block; text-align: center; background: var(--success); color: #ffffff; text-decoration: none; padding: 16px; font-size: 1.05rem; font-weight: 700; border-radius: var(--pill-radius); }
-        
-        /* UNIFIED MONTH, DAY, & 24/7 TIME INTERFACE */
         .month-bubble-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; background: #fafafa; padding: 10px 20px; border-radius: var(--bubble-radius); border: 1px solid var(--border); }
-        .month-bubble-label { font-size: 1rem; font-weight: 700; color: var(--primary); }
-        .arrow-bubble { background: #ffffff; border: 1px solid var(--border); width: 34px; height: 34px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--text-muted); }
         .days-bubble-matrix { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center; }
         .bubble-header-cell { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; padding-bottom: 5px; }
         .bubble-day-cell { background: #ffffff; border: 1px solid var(--border); font-size: 0.95rem; font-weight: 600; color: var(--text-main); height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
         .bubble-day-cell:hover:not(.disabled) { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
         .bubble-day-cell.active-bubble { background: var(--accent) !important; color: #ffffff !important; border-color: var(--accent) !important; font-weight: 700; }
         .bubble-day-cell.disabled { color: #cbd5e1; background: #f8fafc; cursor: not-allowed; border-color: #f1f5f9; }
-        
-        .vertical-time-layer { border-top: 1px solid var(--border); padding-top: 25px; display: none; margin-top: 25px; }
+        .vertical-time-layer { border-top: 1px solid var(--border); padding-top: 25px; display: none; margin-top: 25px; text-align: left; }
         .vertical-time-layer.visible { display: block; }
         .time-bubble-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-        @media (max-width: 550px) { .time-bubble-grid { grid-template-columns: repeat(2, 1fr); } }
         .bubble-time-node { background: #ffffff; border: 1px solid var(--border); color: var(--accent); padding: 12px; border-radius: var(--pill-radius); font-size: 0.9rem; font-weight: 700; cursor: pointer; text-align: center; }
         .bubble-time-node:hover { background: var(--success); color: #ffffff; border-color: var(--success); }
-        .bubble-time-node span { display: block; font-size: 0.7rem; color: var(--text-muted); font-weight: 500; }
+        .bubble-time-node span { display: block; font-size: 0.7rem; color: var(--text-muted); }
         .bubble-time-node:hover span { color: #ffffff; }
-
-        /* ACCORDIONS FOR FAQ AND TERMS LOGIC */
         .accordion-bubble { border: 1px solid var(--border); border-radius: var(--pill-radius); margin-bottom: 12px; overflow: hidden; background: #fafafa; }
         .accordion-trigger { width: 100%; text-align: left; padding: 18px 20px; background: none; border: none; font-size: 1rem; font-weight: 700; color: var(--primary); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .accordion-panel { padding: 0 20px 20px 20px; display: none; background: #ffffff; border-top: 1px solid var(--border); }
-        .accordion-panel p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 20px 0 0 0; }
+        .accordion-panel { padding: 0 20px 20px 20px; display: none; background: #ffffff; border-top: 1px solid var(--border); text-align: left; }
+        .accordion-panel p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; margin: 15px 0 0 0; }
         footer { margin-top: 60px; text-align: center; padding: 30px; border-top: 1px solid var(--border); background: #ffffff; font-size: 0.9rem; color: var(--text-muted); }
     </style>
 </head>
@@ -63,11 +51,11 @@
 <header>
     <div class="logo-text">VORTEX SONIC METRICS</div>
     <div class="region-badge">NYC & Long Island Enterprise Node</div>
-    </header>
+</header>
 
 <div class="main-container">
 
-    <!-- CORPORATE VISION & LEGAL UN SPLASH PORTRAITS -->
+    <!-- MANDATE AND OPERATOR PUBLIC PHOTO BUBBLES -->
     <div class="bubble-card">
         <h2>Corporate Mandate</h2>
         <p>Vortex Sonic Metrics was founded with a singular mission: to eliminate the operational friction and missed revenue gaps that hold back local trade companies. As automation architects, we design clean, zero-overhead technical pipelines that integrate modern enterprise scheduling and secure payment gateways straight into a business's workflow. We build the digital assets that keep your operations running on absolute autopilot, so your crews can focus on the job site while the technology handles the rest.</p>
@@ -77,31 +65,49 @@
             <div class="face-card-bubble">
                 <img src="https://unsplash.com" class="face-img" alt="Elena K.">
                 <div class="face-info-text"><h4>Elena K.</h4><p>Nassau Commercial Electrical</p></div>
-                  </div>
+            </div>
+            <div class="face-card-bubble">
+                <img src="https://unsplash.com" class="face-img" alt="Marcus T.">
+                <div class="face-info-text"><h4>Marcus T.</h4><p>NYC Mechanical Contracting</p></div>
+            </div>
+            <div class="face-card-bubble">
+                <img src="https://unsplash.com" class="face-img" alt="David R.">
+                <div class="face-info-text"><h4>David R.</h4><p>Suffolk Plumbing Systems</p></div>
+            </div>
         </div>
     </div>
 
-    <!-- INFRASTRUCTURE CARD -->
+    <!-- INFRASTRUCTURE DEPLOYMENT CARD -->
     <div class="bubble-card">
         <h2>License Allocation Placement</h2>
         <div class="pricing-bubble">
             <div class="pricing-value">$499 Setup + $299/mo</div>
-            <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: var(--text-muted);">*Flat production license framework. Fixed cost structure. Cancel links anytime.</p>
+            <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: var(--text-muted);">*Flat production license framework. Fixed cost structure. Cancel loop anytime.</p>
         </div>
         <a href="PASTE_YOUR_STRIPE_LINK_HERE" class="checkout-bubble-btn">Activate System Core Infrastructure</a>
     </div>
 
-    <!-- THE UNIFIED 24/7 CALENDAR & TIME MATRIX -->
+    <!-- NATIVE 24/7 CALENDAR & TIME SELECTION INTERFACE -->
     <div class="bubble-card">
         <h2>CandidTime™ Live System Demonstration</h2>
-        <p>Interact directly with the functional vertical runtime configuration layout below. Choose a month navigation node, click an open active calendar day, and select a 24/7 all-hours processing window.</p>
+        <p>Interact directly with the functional vertical runtime configuration layout below. Choose an active date from the calendar grid to access live 24/7 routing blocks.</p>
 
         <div class="month-bubble-row">
-            <button class="arrow-bubble">‹</button>
+            <span style="width:34px;"></span>
             <span class="month-bubble-label">October 2026</span>
-            <button class="arrow-bubble">›</button>
+            <span style="width:34px;"></span>
         </div>
         
         <div class="days-bubble-matrix">
-            <div class="bubble-header-cell">Sun</div><div class="bubble-header-cell">Mon</div><div class="bubble-header-cell">Tue</div><div class="bubble-header-cell">Wed</div><div class="bubble-header-cell">Thu</div><div class="bubble-header-cell">Fri</div><div class="bubble-header-cell">Sat</div>
+            <div class="bubble-header-cell">S</div><div class="bubble-header-cell">M</div><div class="bubble-header-cell">T</div><div class="bubble-header-cell">W</div><div class="bubble-header-cell">T</div><div class="bubble-header-cell">F</div><div class="bubble-header-cell">S</div>
             <div class="bubble-day-cell disabled">27</div><div class="bubble-day-cell disabled">28</div><div class="bubble-day-cell disabled">29</div><div class="bubble-day-cell disabled">30</div>
+            <button class="bubble-day-cell" onclick="show247Times('Thursday, Oct 1', this)">1</button>
+            <button class="bubble-day-cell" onclick="show247Times('Friday, Oct 2', this)">2</button>
+            <button class="bubble-day-cell" onclick="show247Times('Saturday, Oct 3', this)">3</button>
+            <button class="bubble-day-cell" onclick="show247Times('Sunday, Oct 4', this)">4</button>
+            <button class="bubble-day-cell" onclick="show247Times('Monday, Oct 5', this)">5</button>
+            <button class="bubble-day-cell" onclick="show247Times('Tuesday, Oct 6', this)">6</button>
+            <button class="bubble-day-cell" onclick="show247Times('Wednesday, Oct 7', this)">7</button>
+        </div>
+
+        <div class="vertical-time-layer" id="vertical-time-tray">
