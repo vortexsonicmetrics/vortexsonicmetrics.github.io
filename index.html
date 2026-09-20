@@ -138,30 +138,39 @@
         </div>
         </div>
 </div>
- <!-- INTERACTIVE WHITE-LABELED SERVICE MATRIX FEATURING ACTIVE TECH TEAMS -->
+   <!-- PREMIUM VISUAL HUB: REAL HUMAN DISPATCH ALLOCATIONS -->
     <div class="matrix-box">
-        <h2 style="margin-top:0; color: var(--primary);">🕹️ Live CandidTime™ Interface Simulation</h2>
-        <p style="color: var(--text); margin-bottom: 10px;">Select an operational deployment node below to test how the automated engine assigns live sessions without human interaction:</p>
-        <div class="matrix-options">
-            <div class="matrix-card active" onclick="updateSim('tech1', this)">
-                <div class="avatar" style="background: #dbeafe; color: #2563eb;">JD</div>
-                <div class="matrix-title">John D.</div>
-                <div class="matrix-desc">Emergency Dispatch Node</div>
+        <h2 style="margin-top:0; color: var(--primary); text-align: center;">👥 Active CandidTime™ Team Deployments</h2>
+        <p style="color: var(--text); text-align: center; margin-bottom: 30px;">Scroll and select our regional node managers to see exactly what services our automation framework handles daily:</p>
+        
+        <div class="matrix-options" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+            <!-- HUMAN 1: BOOKINGS -->
+            <div class="matrix-card active" style="padding: 30px; border-radius: 12px; background: #fff;">
+                <div style="font-size: 3rem; margin-bottom: 10px;">👨‍🔧</div>
+                <div class="matrix-title" style="font-size: 1.3rem;">John D.</div>
+                <div style="color: var(--accent); font-weight: 700; font-size: 0.9rem; margin-bottom: 10px;">⚡ Automated Intake Node</div>
+                <p style="font-size: 0.9rem; color: #475569; margin: 0;">Handles incoming customer booking requests. Instantly locks appointment times onto your crew's phone screens the second a customer clicks your page.</p>
             </div>
-            <div class="matrix-card" onclick="updateSim('tech2', this)">
-                <div class="avatar" style="background: #d1fae5; color: #059669;">MS</div>
-                <div class="matrix-title">Marcus S.</div>
-                <div class="matrix-desc">Borough Route Manager</div>
+
+            <!-- HUMAN 2: MODIFICATIONS -->
+            <div class="matrix-card style="padding: 30px; border-radius: 12px; background: #fff;">
+                <div style="font-size: 3rem; margin-bottom: 10px;">👩‍💻</div>
+                <div class="matrix-title" style="font-size: 1.3rem;">Sarah M.</div>
+                <div style="color: #10b981; font-weight: 700; font-size: 0.9rem; margin-bottom: 10px;">🔄 Shift-Slot routing</div>
+                <p style="font-size: 0.9rem; color: #475569; margin: 0;">Manages schedule adjustments on autopilot. If a client needs to alter a booking window, our logic engine shifts their timing seamlessly without any voice calls.</p>
             </div>
-            <div class="matrix-card" onclick="updateSim('tech3', this)">
-                <div class="avatar" style="background: #fef3c7; color: #d97706;">AL</div>
-                <div class="matrix-title">Alex L.</div>
-                <div class="matrix-desc">Lead Systems Auditor</div>
+
+            <!-- HUMAN 3: CANCELLATIONS -->
+            <div class="matrix-card" style="padding: 30px; border-radius: 12px; background: #fff;">
+                <div style="font-size: 3rem; margin-bottom: 10px;">👨‍💻</div>
+                <div class="matrix-title" style="font-size: 1.3rem;">Alex L.</div>
+                <div style="color: #f59e0b; font-weight: 700; font-size: 0.9rem; margin-bottom: 10px;">❌ Seat Clearance Matrix</div>
+                <p style="font-size: 0.9rem; color: #475569; margin: 0;">Processes late-night client cancellations. Instantly opens dropped schedule blocks back up to the public grid so your business never leaves money on the table.</p>
             </div>
         </div>
-        <div id="sim-display" class="display-panel">> SYSTEM STATE: IDLE // Awaiting grid instruction token...</div>
     </div>
 </div>
+
 <footer>
     <p>&copy; 2026 Vortex Sonic Metrics LLC. CandidTime™ is a proprietary software infrastructure asset operated exclusively by Vortex Sonic Metrics LLC. All rights reserved.</p>
     <div style="margin-top: 15px;">
@@ -170,20 +179,5 @@
         <a href="terms.html" style="color: var(--accent); text-decoration: underline; font-weight: 700; margin: 0 15px; font-size: 1rem;">👉 Click to View: Terms of Service & Licensing</a>
     </div>
 </footer>
-<script>
-    function updateSim(tech, element) {
-        document.querySelectorAll('.matrix-card').forEach(card => card.classList.remove('active'));
-        element.classList.add('active');
-        const display = document.getElementById('sim-display');
-        if (tech === 'tech1') {
-            display.innerHTML = `> QUERYING STATUS: John D. [Emergency Dispatch Node]<br>> CURRENT STATE: Available for Intake Allocation<br>> INBOUND TRANSACTION: Client Requests On-Site Service Window<br>> AUTOMATION FEEDBACK: Time slot successfully locked to user's Google Calendar. Push alert fired to device. [0 manual steps required]`;
-        } else if (tech === 'tech2') {
-            display.innerHTML = `> QUERYING STATUS: Marcus S. [Borough Route Manager]<br>> CURRENT STATE: Active Routing Grid Syncing<br>> INBOUND TRANSACTION: Client Requests Date-Shift Modification<br>> AUTOMATION FEEDBACK: Old allocation database line dropped. New time slot verified and updated automatically across field layout.`;
-        } else if (tech === 'tech3') {
-            display.innerHTML = `> QUERYING STATUS: Alex L. [Lead Systems Auditor]<br>> CURRENT STATE: Monitoring Seat Clearance Nodes<br>> INBOUND TRANSACTION: Client Triggered Automated Cancellation Notice<br>> AUTOMATION FEEDBACK: Appointment cell securely cleared via web server. Database node restored to global availability index immediately.`;
-        }
-    }
-    window.onload = function() { updateSim('tech1', document.querySelector('.matrix-card')); };
-</script>
 </body>
 </html>
