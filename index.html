@@ -295,7 +295,7 @@
   <div style="background: #f8fafc; padding: 1.5rem; border-bottom: 1px solid #e2e8f0;">
     <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem; color: #0f172a;">CandidTime™ Automated B2B Dispatch & Scheduling</h3>
     <p style="margin: 0; color: #475569; font-size: 0.95rem; line-height: 1.5;">
-      Empower trade contractors and enterprise clients to lock in real-time technical dispatch slots instantly. Select a one-time service or ongoing license below.
+      Empower trade contractors and enterprise clients to lock in real-time technical dispatch slots instantly.
     </p>
   </div>
 
@@ -334,23 +334,11 @@
       </div>
     </div>
 
-    <!-- Column 2: Time Slots & Service Plan Selection -->
+    <!-- Column 2: Time Slots -->
     <div>
       <div style="font-weight: 600; margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b;">
-        2. Choose Routing Block & Billing Option
+        2. Choose Live Routing Block
       </div>
-      
-      <!-- Service Type Selector -->
-      <div style="display: flex; gap: 8px; margin-bottom: 1rem; background: #f1f5f9; padding: 4px; border-radius: 8px;">
-        <button id="planOneTime" type="button" onclick="setBillingType('oneTime')" style="flex: 1; padding: 8px; border: none; border-radius: 6px; background: #ffffff; font-weight: 600; font-size: 0.85rem; color: #0f172a; cursor: pointer; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
-          One-Time ($499)
-        </button>
-        <button id="planSub" type="button" onclick="setBillingType('subscription')" style="flex: 1; padding: 8px; border: none; border-radius: 6px; background: transparent; font-weight: 500; font-size: 0.85rem; color: #64748b; cursor: pointer;">
-          Monthly ($499 Setup + $299/mo)
-        </button>
-      </div>
-
-      <!-- Time Slot Buttons -->
       <div style="display: flex; flex-direction: column; gap: 10px;">
         <button class="slot-btn" type="button" onclick="selectSlot(this, '08:00 AM - 10:00 AM (NYC Core)')" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; background: #ffffff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem;">
           <span>08:00 AM - 10:00 AM</span>
@@ -369,6 +357,76 @@
           <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: #059669; color: #ffffff;">Express 24/7</span>
         </button>
       </div>
+    </div>
+
+  <!-- Bottom Action Bar (No Prices Shown) -->
+  <div style="padding: 1rem 1.5rem; background: #f8fafc; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+    <div id="selectionSummary" style="font-size: 0.9rem; color: #475569;">
+      Select a date and time slot above to activate schedule.
+    </div>
+    <button id="bookBtn" type="button" disabled onclick="confirmBooking()" style="background: #94a3b8; color: white; border: none; padding: 12px 24px; border-radius: 6px; font-weight: 600; cursor: not-allowed; transition: all 0.2s;">
+      1-Click Schedule
+    </button>
+  </div>
+</div>
+
+<script>
+  let activeDate = null;
+  let activeSlot = null;
+
+  // Insert your Stripe Payment Link URL here:
+  const STRIPE_PAYMENT_URL = 'https://buy.stripe.com/YOUR_STRIPE_LINK_HERE';
+
+  function selectDate(el, dateStr) {
+    document.querySelectorAll('.date-cell').forEach(d => {
+      d.style.background = '#ffffff';
+      d.style.borderColor = '#e2e8f0';
+    });
+    el.style.background = '#d1fae5';
+    el.style.borderColor = '#059669';
+    activeDate = dateStr;
+    updateStatus();
+  }
+
+  function selectSlot(el, slotStr) {
+    document.querySelectorAll('.slot-btn').forEach(b => {
+      b.style.background = '#ffffff';
+      b.style.borderColor = '#e2e8f0';
+    });
+    el.style.background = '#d1fae5';
+    el.style.borderColor = '#059669';
+    activeSlot = slotStr;
+    updateStatus();
+  }
+
+  function updateStatus() {
+    const summary = document.getElementById('selectionSummary');
+    const btn = document.getElementById('bookBtn');
+
+    if (activeDate && activeSlot) {
+      summary.innerHTML = `<span style="color: #059669; font-weight: 600;">Selected:</span> ${activeDate} @ ${activeSlot}`;
+      btn.disabled = false;
+      btn.style.background = '#059669';
+      btn.style.cursor = 'pointer';
+    } else if (activeDate) {
+      summary.innerHTML = `Selected Date: <strong>${activeDate}</strong> (Now select a routing block)`;
+    } else if (activeSlot) {
+      summary.innerHTML = `Selected Slot: <strong>${activeSlot}</strong> (Now select a date)`;
+    }
+  }
+
+  function confirmBooking() {
+    if (!activeDate || !activeSlot) return;
+
+    if (STRIPE_PAYMENT_URL.includes('YOUR_STRIPE_LINK_HERE')) {
+      alert(`Connecting to Stripe Checkout...\n\nSelected: ${activeDate} @ ${activeSlot}\n\n(Replace 'YOUR_STRIPE_LINK_HERE' in index.html with your actual Stripe Payment Link URL).`);
+    } else {
+      // Pass the selected appointment details to Stripe as a reference parameter
+      const targetUrl = `${STRIPE_PAYMENT_URL}?client_reference_id=${encodeURIComponent(activeDate + ' - ' + activeSlot)}`;
+      window.location.href = targetUrl;
+    }
+  }
+</script>
     </div>
 
   </div>
