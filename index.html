@@ -3,130 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vortex Sonic Metrics | Automated Calendar Solutions</title>
+    <title>Vortex Sonic Metrics | Enterprise Scheduling Infrastructure</title>
     <style>
-        :root { --primary: #0f172a; --accent: #2563eb; --text: #334155; --bg: #f8fafc; --success: #10b981; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background-color: var(--bg); color: var(--text); line-height: 1.6; }
-        header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; padding: 60px 20px; text-align: center; border-bottom: 4px solid var(--accent); }
-        header h1 { margin: 0; font-size: 2.5rem; font-weight: 800; }
-        header p { margin: 10px auto 0; color: #94a3b8; font-size: 1.1rem; max-width: 600px; }
-        
-        .container { max-width: 1150px; margin: 40px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; margin-bottom: 50px; }
-        @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
-        
-        .card { background: #fff; padding: 35px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); height: fit-content; }
-        .card h2 { margin-top: 0; color: var(--primary); font-size: 1.6rem; }
-        .price-tag { background: #f1f5f9; padding: 15px; border-radius: 8px; font-weight: 700; color: var(--accent); font-size: 1.5rem; margin: 15px 0; display: inline-block; }
-        .bullet-list { padding-left: 20px; margin: 20px 0; color: #475569; }
-        .bullet-list li { margin-bottom: 12px; }
-        
-        .checkout-btn { display: block; text-align: center; background: var(--success); color: #fff; text-decoration: none; padding: 16px; font-size: 1.1rem; font-weight: 700; border-radius: 6px; transition: background 0.2s; margin-top: 25px; }
-        .checkout-btn:hover { background: #059669; }
-        /* INLINE PROPRIETARY EMBED LAYOUT CONTAINERS */
-        .embed-wrapper { background: #fff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 40px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); margin-top: 20px; }
-        .inline-embed-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; margin-top: 30px; }
-        @media (max-width: 900px) { .inline-embed-grid { grid-template-columns: 1fr; } }
-        
-        /* BRAND INFORMATION SIDE */
-        .info-side { text-align: left; display: flex; flex-direction: column; justify-content: center; }
-        .commercial-heading { font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0 0 15px 0; line-height: 1.2; }
-        .commercial-lead { font-size: 1.05rem; color: #475569; margin: 0 0 30px 0; }
-        
-        .feature-row { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 25px; }
-        .feature-icon { background: #eff6ff; color: var(--accent); font-size: 1.25rem; padding: 10px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; width: 24px; height: 24px; }
-        .feature-text h4 { margin: 0 0 4px 0; font-size: 1.1rem; color: var(--primary); font-weight: 700; }
-        .feature-text p { margin: 0; font-size: 0.95rem; color: #64748b; }
-        
-        /* IN-HOUSE CALENDAR GRID ENGINE SIDE */
-        .engine-side { background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); min-height: 500px; display: flex; flex-direction: column; justify-content: space-between; text-align: left; }
-        .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px; }
-        .calendar-title { font-weight: 800; color: var(--primary); font-size: 1.2rem; }
-        
-        .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; text-align: center; }
-        .day-label { font-size: 0.75rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; }
-        .day-cell { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 5px; font-weight: 700; color: #475569; cursor: pointer; transition: all 0.2s; font-size: 0.95rem; }
-        .day-cell:hover { border-color: var(--accent); background: #f0fdf4; color: var(--accent); }
-        .day-cell.active { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); }
-        .day-cell.disabled { background: #f1f5f9; color: #cbd5e1; cursor: not-allowed; border: none; }
-        
-        .time-tray { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 25px; }
-        .time-slot { border: 1px solid #e2e8f0; background: #fff; padding: 12px; border-radius: 6px; text-align: center; font-weight: 700; font-size: 0.9rem; color: var(--primary); cursor: pointer; transition: all 0.2s; }
-        .time-slot:hover { border-color: var(--success); background: #f0fdf4; color: var(--success); }
-        
-        .console-panel { background: #0f172a; color: #38bdf8; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 0.85rem; margin-top: 25px; border-left: 4px solid var(--accent); min-height: 60px; line-height: 1.4; }
+        :root {
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --accent-light: #eff6ff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-page: #f8fafc;
+            --bg-card: #ffffff;
+            --border: #e2e8f0;
+            --success: #10b981;
+        }
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
+        }
 
-        footer { margin-top: 80px; text-align: center; padding: 25px; border-top: 1px solid #e2e8f0; font-size: 0.9rem; }
-    </style>
-</head>
-<body>
-<header>
-    <h1>Vortex Sonic Metrics</h1>
-    <p>On-Demand Automated Scheduling Engines for Trade Providers</p>
-</header>
+        /* DUAL CARD PRODUCT PACKAGING GRID */
+        .sales-container {
+            max-width: 1120px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 30px;
+        }
 
-<div class="container">
-    <div class="grid">
-        <!-- VALUE STATEMENT CARD -->
-        <div class="card" style="border-top: 4px solid var(--accent);">
-            <h2>⚙️ Software Infrastructure License</h2>
-            <p>We deploy full-scale, hands-off scheduling assets for trade operations. Stop dropping revenue windows to manual booking or phone cancellation gaps.</p>
-            <ul class="bullet-list">
-                <li><strong>24/7 Calendar Infrastructure:</strong> Clients self-schedule, modify, or cancel dispatch requests entirely on their own.</li>
-                <li><strong>Real-Time Mobile Bridge:</strong> All automated reservations inject instantly straight into your field crew's personal mobile screens.</li>
-                <li><strong>Automated Seat Clearance:</strong> System securely opens canceled slots back up for new paying accounts on autopilot.</li>
-            </ul>
-        </div>
-         <!-- PAYMENT CONTAINER CARD -->
-        <div class="card" style="border-top: 4px solid var(--success);">
-            <h2>💼 License Activation</h2>
-            <p>Secure an active infrastructure node setup for your regional service territory.</p>
-            <div class="price-tag">$499 Setup + $299/mo</div>
-            <p style="font-size: 0.85rem; color: #64748b; margin: 0;">*Flat baseline processing rate. Fixed pricing tier framework. Cancel anytime via standard service protocols.</p>
-            
-            <!-- PASTE YOUR STRIPE URL IN HREF BELOW -->
-            <a href="PASTE_YOUR_STRIPE_LINK_HERE" class="checkout-btn">Activate Automation System</a>
-        </div>
-    </div>
+        @media (max-width: 900px) {
+            .sales-container { grid-template-columns: 1fr; margin: 20px auto; }
+        }
 
-    <!-- THE NATIVE INTERACTIVE COMPONENT LAYER -->
-    <div class="embed-wrapper">
-        <div class="inline-embed-grid">
-            
-            <!-- LEFT COLUMN: ARCHITECTURE VALUES -->
-            <div class="info-side">
-                <h3 class="commercial-heading">Proprietary CandidTime™ Operational Layer</h3>
-                <p class="commercial-lead">Interact directly with our standalone booking matrix interface on the right. This module simulates how customers secure immediate dispatch allocations on absolute autopilot without voice interaction logs.</p>
-                
-                <div class="feature-row">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">
-                        <h4>Zero External Branding</h4>
-                        <p>No third-party trackers, widgets, or logos. The software ecosystem belongs exclusively to your corporate brand name footprint.</p>
-                    </div>
-                </div>
-                
-                <div class="feature-row">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">
-                        <h4>Immediate Response Routing</h4>
-                        <p>Data events resolve client-side instantly inside the web viewport, driving maximum customer submission speed.</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- RIGHT COLUMN: NATIVE CALENDAR DISPLAY ENGINE -->
-            <div class="engine-side">
-                <div>
-                    <div class="calendar-header">
-                        <span class="calendar-title">📅 Select Session Parameters</span>
-                        <span style="font-size: 0.8rem; font-weight: 700; color: var(--success); background: #e6f4ea; padding: 4px 10px; border-radius: 12px;">CandidTime™ Engine v1.0</span>
-                    </div>
-                    <!-- CALENDAR INTERFACE CELLS -->
-                    <div class="days-grid">
-                        <span class="day-label">Mon</span><span class="day-label">Tue</span><span class="day-label">Wed</span><span class="day-label">Thu</span><span class="day-label">Fri</span><span class="day-label">Sat</span><span class="day-label">Sun</span>
-                        
-                        <button class="day-cell disabled" disabled>21</button>
-                        <button class="day-cell disabled" disabled>22</button>
-                        <button class="day-cell active" onclick="selectDate(23)">23</button>
-                        <button class="day-cell" onclick="selectDate(24)">24</button>
+        .sales-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+             justify-content: space-between;
+        }
+
+        .sales-card h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0 0 15px 0;
+            letter-spacing: -0.03em;
+        }
+
+        .sales-card p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0 0 25px 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .feature-icon {
+             color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1;
+        }
+
+        .feature-text h3 {
+            margin: 0 0 4px 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .feature-text p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .price-box {
+            background: var(--bg-page);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .price-value {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .price-disclaimer {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .cta-button {
+            display: block;
+            text-align: center;
+            background: var(--success);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 6px;
+            transition: background 0.15s ease;
+        }
+         .cta-button:hover {
+            background: #059669;
+        }
+
+        /* PREMIUM BRANDED INTERACTIVE SCHEDULER ENGINE */
+        .scheduler-wrapper {
+            max-width: 1120px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+        }
+
+        .scheduler-header {
+            margin-bottom: 25px;
+        }
+
+        .scheduler-header h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0 0 8px 0;
+        }
+        .scheduler-header p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .scheduler-frame {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 10px 40px -10px rgba(0,0,0,0.03);
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: 600px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (max-width: 850px) {
+            .scheduler-frame { grid-template-columns: 1fr; min-height: auto; }
+        }
+
+        /* OPERATIONAL LAYER SIDEBAR (LEFT) */
+        .brand-sidebar {
+            padding: 40px;
+            border-right: 1px solid var(--border);
+            background: var(--bg-card);
+        }
+        @media (max-width: 850px) {
+            .brand-sidebar { border-right: none; border-bottom: 1px solid var(--border); padding: 30px; }
+        }
+
+        .brand-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .session-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 0 15px 0;
+            line-height: 1.2;
+        }
+
+        .session-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            }
+
+        .session-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ENGINE VISUAL CALENDAR SPACE (RIGHT) */
+        .calendar-space {
+            display: grid;
+            grid-template-columns: 1fr;
+            transition: grid-template-columns 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background: var(--bg-card);
+        }
+
+        .calendar-space.has-time {
+            grid-template-columns: 1.2fr 0.8fr;
+        }
+
+        @media (max-width: 650px) {
+            .calendar-space.has-time { grid-template-columns: 1fr; }
+        }
+
+        .datepicker-container {
+            padding: 40px;
+            display: flex;
+              flex-direction: column;
+        }
+
+        .month-selector {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .month-label {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .month-nav-btn {
+            background: transparent;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+
+        .month-nav-btn:hover {
+            background: var(--bg-page);
+            color: var(--primary);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 8px;
+            text-align: center;
+        }
+
+        .weekday-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .date-cell {
+            background: transparent;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-main);
+            height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.1s ease;
+        }
+
+        .date-cell:hover:not(.disabled) {
+            background: var(--accent-light);
+            color: var(--accent);
+        }
+
+        .date-cell.active {
+            background: var(--accent) !important;
+            color: #ffffff !important;
+            font-weight: 700;
+        }
+
+        .date-cell.disabled {
+            color: #cbd5e1;
+            cursor: not-allowed;
+        }
+/* ALL-HOURS SLIDE OUT EXPANSION PANEL */
+        .time-panel {
+            border-left: 1px solid var(--border);
+            padding: 40px 25px;
+            display: none;
+            flex-direction: column;
+            background: var(--bg-card);
+            max-height: 600px;
+        }
+
+        @media (max-width: 650px) {
+            .time-panel { border-left: none; border-top: 1px solid var(--border); max-height: none; }
+        }
+
+        .time-panel.visible {
+            display: flex;
+        }
+
+        .time-panel-header {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+         .time-slots-list {
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-right: 5px;
+        }
+
+        .time-button {
+            background: #ffffff;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 14px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            text-align: center;
+        }
+
+        .time-button:hover {
+            border-width: 2px;
+            background: var(--accent-light);
+        }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            background: #ffffff;
+        }
+
+        footer p {
