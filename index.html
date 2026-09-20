@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CandidTime Integration Node - Vortex Sonic Metrics LLC</title>
+    <title>CandidTime Routing Hub - Vortex Sonic Metrics LLC</title>
     <style>
         :root {
             --bg-main: #f8fafc;
@@ -13,8 +13,7 @@
             --accent: #2563eb;
             --accent-hover: #1d4ed8;
             --border: #e2e8f0;
- --success: #16a34a;
-            --success-bg: #f0fdf4;
+            --success: #16a34a;
         }
 
         body {
@@ -29,15 +28,26 @@
             align-items: center;
         }
 
-        .section-wrapper {
-            max-width: 800px;
+        .hub-container {
+            background: var(--surface);
+            max-width: 960px;
             width: 100%;
-            margin-bottom: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            overflow: hidden;
         }
-        /* Profile Branding Section */
-        .brand-header {
-            text-align: center;
-            margin-bottom: 40px;
+         @media (max-width: 768px) {
+            .hub-container { grid-template-columns: 1fr; }
+        }
+
+        /* Profile & Details Panel */
+        .info-panel {
+            padding: 40px;
+            border-right: 1px solid var(--border);
+            background: linear-gradient(to bottom right, #ffffff, #f8fafc);
         }
 
         .brand-badge {
@@ -46,174 +56,74 @@
             letter-spacing: 0.05em;
             background: #e0f2fe;
             color: #0369a1;
-            padding: 6px 14px;
+            padding: 4px 10px;
             border-radius: 20px;
             font-weight: 700;
         }
 
-        /* MODERN LOGO TYPOGRAPHY STYLE */
-        .logo-container {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            margin: 25px 0 15px 0;
-        }
-         .product-logo {
-            font-size: 3.2rem;
-            font-weight: 850;
-            letter-spacing: -0.04em;
-            background: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin: 0;
+        .company-title {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin: 15px 0 5px 0;
+             font-weight: 500;
         }
 
-        .logo-icon {
-            font-size: 2.6rem;
-            animation: pulse-ring 2s infinite alternate;
-        }
-
-        @keyframes pulse-ring {
-            0% { transform: scale(1) rotate(0deg); }
-            100% { transform: scale(1.05) rotate(10deg); }
+        .product-title {
+            font-size: 2.2rem;
+            margin: 0 0 20px 0;
+            font-weight: 800;
+            letter-spacing: -0.03em;
         }
 
         .description {
             color: var(--text-secondary);
             line-height: 1.6;
-            font-size: 1.05rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-         /* REAL-PEOPLE USER FLOW GRID */
-        .animation-banner {
-            background: linear-gradient(135deg, #eff6ff 0%, #e0f2fe 100%);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 30px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 30px;
+            font-size: 0.95rem;
         }
 
-        .user-avatar-card {
-            background: var(--surface);
-            padding: 12px 20px;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        /* Interactive Scheduling Panel */
+        .scheduler-panel {
+            padding: 40px;
             display: flex;
-            align-items: center;
-            gap: 12px;
-            border: 1px solid rgba(37, 99, 235, 0.1);
-        }
-        .avatar-img {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid #ffffff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .user-bubble-text {
-            font-size: 0.85rem;
+        .section-heading {
+            font-size: 1.1rem;
             font-weight: 600;
-            color: #334155;
-        }
-
-        .user-bubble-status {
-            font-size: 0.75rem;
-            color: var(--success);
-            display: block;
-            margin-top: 2px;
-        }
-          /* License / Stripe Payment Module */
-        .checkout-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-top: 4px solid var(--success);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .price-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .price-tag {
-            font-size: 1.8rem;
-            font-weight: 800;
+            margin-bottom: 20px;
             color: var(--text-primary);
-            letter-spacing: -0.02em;
         }
-         .checkout-btn {
-            background: var(--accent);
-            color: #ffffff;
-            padding: 14px 28px;
-            border-radius: 6px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.15s ease;
-        }
-
-        .checkout-btn:hover {
-            background: var(--accent-hover);
-        }
-
-        /* Interactive Live System Demonstration Area */
-        .demo-section {
-            background: var(--surface);
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-         .section-heading {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin: 0 0 10px 0;
-        }
-
-        .time-grid {
+         .time-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-            margin-top: 20px;
+            grid-template-columns: 1fr;
+            gap: 10px;
         }
 
         .time-slot-btn {
-            background: var(--bg-main);
+            background: var(--surface);
             border: 1px solid var(--border);
             color: var(--text-primary);
-            padding: 16px;
+            padding: 14px;
             border-radius: 8px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
             text-align: center;
         }
+
         .time-slot-btn:hover {
             border-color: var(--accent);
             color: var(--accent);
             background: #eff6ff;
-            transform: translateY(-2px);
+            transform: translateY(-1px);
         }
-
         .console-log {
             margin-top: 25px;
-            padding: 14px;
-            border-radius: 8px;
+            padding: 12px;
+            border-radius: 6px;
             background: #f1f5f9;
             border: 1px solid var(--border);
             font-size: 0.85rem;
@@ -221,98 +131,69 @@
             text-align: center;
             font-weight: 500;
         }
+
         footer {
             margin-top: 40px;
             text-align: center;
             font-size: 0.85rem;
             color: var(--text-secondary);
-            line-height: 1.6;
         }
 
         footer a {
-            color: var(--text-secondary);
-            text-decoration: underline;
-            margin: 0 8px;
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
-
-<!-- TOP BRAND BANNER -->
-<div class="section-wrapper brand-header">
-    <span class="brand-badge">Vortex Sonic Metrics LLC</span>
-    <br>
-    <div class="logo-container">
-        <span class="logo-icon">🕒</span>
-        <h1 class="product-logo">CandidTime</h1>
-    </div>
-    <p class="description">
-        Secure enterprise ingestion pipelines engineered for immediate localized scheduling control and transparent data routing.
-    </p>
-</div>
-<!-- REAL-PEOPLE PRODUCTION PREVIEW GRID -->
-<div class="section-wrapper animation-banner">
-    <div class="user-avatar-card">
-        <img class="avatar-img" src="https://unsplash.com" alt="Sarah M.">
-        <div class="user-bubble-text">
-            Sarah M. (Contracting)
-            <span class="user-bubble-status">✨ Synced Instantly</span>
-        </div>
-    </div>
-    <div class="user-avatar-card">
-        <img class="avatar-img" src="https://unsplash.com" alt="Dr. Aris">
-        <div class="user-bubble-text">
-            Dr. Aris (Diagnostics)
-            <span class="user-bubble-status">✨ Route Secured</span>
-        </div>
-    </div>
-    <div class="user-avatar-card">
-        <img class="avatar-img" src="https://unsplash.com" alt="James K.">
-        <div class="user-bubble-text">
-            James K. (Enterprise)
-            <span class="user-bubble-status">✨ Booking Confirmed</span>
-               </div>
-    </div>
-</div>
-
-<!-- CORE BILLING LAYER -->
-<div class="section-wrapper">
-    <div class="checkout-card">
-        <h2 style="margin:0; font-size:1.3rem;">💼 Enterprise License Activation</h2>
-        <p style="margin:5px 0 0 0; color:var(--text-secondary); font-size:0.95rem;">Deploy an isolated processing channel for your regional territory operations.</p>
-        <div class="price-flex">
-            <div>
-                <div class="price-tag">$499 Setup + $299/mo</div>
-                <div style="font-size:0.8rem; color:var(--text-secondary);">*Fixed architectural scale pricing. Unified compliance layer.</div>
-            </div>
-            <a href="PASTE_YOUR_STRIPE_LINK_HERE" class="checkout-btn">Activate System Node</a>
-        </div>
-    </div>
-</div>
-
-<!-- DEMO CANVAS PANEL -->
-<div class="section-wrapper">
-    <div class="demo-section">
-        <h2 class="section-heading">🕹️ Live System Demonstration</h2>
-        <p style="margin:0; color:var(--text-secondary); font-size:0.95rem; line-height:1.5;">
-            <div class="price-flex">
-            <div>
-                <div class="price-tag">$499 Setup + $299/mo</div>
-                <div style="font-size:0.8rem; color:var(--text-secondary);">*Fixed architectural scale pricing. Unified compliance layer.</div>
-            </div>
-            <a href="PASTE_YOUR_STRIPE_LINK_HERE" class="checkout-btn">Activate System Node</a>
-        </div>
-    </div>
-</div>
-
-<!-- DEMO CANVAS PANEL -->
-<div class="section-wrapper">
-    <div class="demo-section">
-        <h2 class="section-heading">🕹️ Live System Demonstration</h2>
-        <p style="margin:0; color:var(--text-secondary); font-size:0.95rem; line-height:1.5;">
-            Interact with the local scheduling canvas environment. Pick an active framework path window below to test real-time validation response behaviors.
+    <div class="hub-container">
+    <!-- LEFT PANEL: PROPRIETARY LLC DATA INFRASTRUCTURE -->
+    <div class="info-panel">
+        <span class="brand-badge">Vortex Sonic Metrics LLC</span>
+        <div class="company-title">Secure Enterprise Framework</div>
+        <h1 class="product-title">CandidTime</h1>
+        <p class="description">
+            Welcome to the direct operational access node. This interface acts as the decoupled intake layer for premium localized market confirmation. 
         </p>
+        <p class="description" style="margin-top: 15px;">
+            Select an active pipeline synchronization window on the right to anchor your coordination route securely inside our corporate database.
+        </p>
+    </div>
+
+    <!-- RIGHT PANEL: CLEAN SELECTION GRID -->
+    <div class="scheduler-panel">
+        <div class="section-heading">Available Deployment Windows</div>
         
         <div class="time-grid">
-            <button class="time-slot-btn" onclick="runDemoRouting('09:00 AM Standard Node')">09:00 AM Session</button>
-            <button class="time-slot-btn" onclick="runDemoRouting('11:30 AM Standard Node')">11:30 AM Session</button>
+            <button class="time-slot-btn" onclick="triggerSync('09:00 AM Standard Node')">09:00 AM Session</button>
+            <button class="time-slot-btn" onclick="triggerSync('11:30 AM Standard Node')">11:30 AM Session</button>
+            <button class="time-slot-btn" onclick="triggerSync('02:00 PM Extended Node')">02:00 PM Session</button>
+            <button class="time-slot-btn" onclick="triggerSync('04:30 PM Express Node')">04:30 PM Session</button>
+        </div>
+        <div id="status-display" class="console-log">
+            Status: System Armed. Awaiting client node routing input.
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 Vortex Sonic Metrics LLC. All rights reserved. CandidTime is an engineered scheduling asset of Vortex Sonic Metrics LLC.</p>
+    <p>
+        <a href="terms.html">Terms of Service &amp; Compliance</a> | 
+        <a href="faq.html">System Documentation</a>
+    </p>
+</footer>
+
+<script>
+    function triggerSync(nodeSignature) {
+        const display = document.getElementById('status-display');
+        display.style.background = '#f0fdf4';
+        display.style.borderColor = '#bbf7d0';
+        display.style.color = 'var(--success)';
+        display.innerHTML = '✔ Success: Ingestion pipeline mapped via ' + nodeSignature + '. Dispatch parameters confirmed under corporate structural guidelines.';
+          }
+</script>
+
+</body>
+</html>
