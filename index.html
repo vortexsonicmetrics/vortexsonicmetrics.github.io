@@ -18,339 +18,138 @@
             --bubble-radius: 24px;
             --pill-radius: 12px;
         }
-body {
+        body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-page);
-            color: var(--text-main);
-            -webkit-font-smoothing: antialiased;
+            margin: 0; padding: 0; background-color: var(--bg-page); color: var(--text-main);
         }
-
         header {
-            background: var(--bg-card);
-            padding: 20px 40px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+ background: var(--bg-card); padding: 20px 40px; border-bottom: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
         }
-
-        .logo-text {
-            font-size: 1.15rem;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: -0.02em;
-        }
-
-        .region-badge {
-            font-size: 0.8rem;
-            font-weight: 700;
-background: var(--accent-light);
-            color: var(--accent);
-            padding: 6px 16px;
-            border-radius: var(--bubble-radius);
-        }
-
-        .main-container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* FLEX BUBBLE CARD WRAPPERS */
+        .logo-text { font-size: 1.15rem; font-weight: 800; color: var(--primary); }
+        .region-badge { font-size: 0.8rem; font-weight: 700; background: var(--accent-light); color: var(--accent); padding: 6px 16px; border-radius: var(--bubble-radius); }
+        .main-container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
         .bubble-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--bubble-radius);
-            padding: 35px;
-            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04);
-            margin-bottom: 30px;
-            text-align: left;
+            background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--bubble-radius);
+            padding: 35px; box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04); margin-bottom: 30px; text-align: left;
         }
- .bubble-card h2 {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--primary);
-            margin: 0 0 15px 0;
-            letter-spacing: -0.02em;
-        }
-
-        .bubble-card p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin: 0 0 25px 0;
-        }
-
-        .feature-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-bottom: 25px;
-        }
-
+        .bubble-card h2 { font-size: 1.4rem; font-weight: 800; color: var(--primary); margin: 0 0 15px 0; }
+        .bubble-card p { font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin: 0 0 25px 0; }
         .feature-bubble {
-            display: flex;
-            gap: 12px;
-            background: #fafafa;
-            padding: 16px 20px;
-            border-radius: var(--pill-radius);
-            border: 1px solid var(--border);
+            display: flex; gap: 12px; background: #fafafa; padding: 16px 20px;
+            border-radius: var(--pill-radius); border: 1px solid var(--border); margin-bottom: 15px;
         }
-         .feature-check {
-            color: var(--success);
-            font-weight: bold;
-        }
-
-        .feature-info h4 {
-            margin: 0 0 2px 0;
-            font-size: 1rem;
-            font-weight: 700;
-        }
-
-        .feature-info p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .pricing-bubble {
-            background: var(--bg-page);
-            border-radius: var(--pill-radius);
-            padding: 20px;
-            margin-bottom: 25px;
-        }
-         .pricing-value {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-
+        .feature-check { color: var(--success); font-weight: bold; }
+        .pricing-bubble { background: var(--bg-page); border-radius: var(--pill-radius); padding: 20px; margin-bottom: 25px; }
+        .pricing-value { font-size: 1.75rem; font-weight: 800; color: var(--primary); }
         .checkout-bubble-btn {
-            display: block;
-            text-align: center;
-            background: var(--success);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 16px;
-            font-size: 1.05rem;
-            font-weight: 700;
-            border-radius: var(--pill-radius);
-            transition: transform 0.15s ease, background 0.15s ease;
+            display: block; text-align: center; background: var(--success); color: #ffffff;
+            text-decoration: none; padding: 16px; font-size: 1.05rem; font-weight: 700; border-radius: var(--pill-radius);
         }
-
-        .checkout-bubble-btn:hover {
-            background: #059669;
-            transform: scale(1.01);
-        }
-
-        /* ------------------------------------------------ */
-        /* VERTICAL FLEX BUBBLE CANDIDTIME SCHEDULER MATRIX */
-        /* ------------------------------------------------ */
-        .showcase-heading {
-            text-align: left;
-            margin: 40px 0 15px 10px;
-        }
-
-        .showcase-heading h3 {
-            margin: 0 0 4px 0;
-            font-size: 1.3rem;
-            font-weight: 800;
-        }
-
-        .showcase-heading p {
-            margin: 0;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .vertical-engine-bubble {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--bubble-radius);
-            padding: 35px;
-            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.06);
-            display: flex;
-             flex-direction: column;
-            gap: 30px;
-        }
-
+        .checkout-bubble-btn:hover { background: #059669; }
         .mission-bubble {
-            background: var(--accent-light);
-            border: 1px solid #dbeafe;
-            padding: 25px;
-            border-radius: var(--pill-radius);
-            text-align: left;
+            background: var(--accent-light); border: 1px solid #dbeafe; padding: 25px;
+            border-radius: var(--pill-radius); text-align: left; margin-bottom: 25px;
         }
-
-        .mission-bubble h4 {
-            margin: 0 0 8px 0;
-            color: var(--accent);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 700;
-        }
-
-        .mission-bubble p {
-            margin: 0;
-            font-size: 0.95rem;
-            color: #1e3a8a;
-            line-height: 1.6;
-        }
-/* VERTICAL CALENDAR MATRIX TOP LAYER */
-        .calendar-layer {
-            width: 100%;
-        }
-
+        .mission-bubble h4 { margin: 0 0 8px 0; color: var(--accent); font-size: 0.85rem; text-transform: uppercase; }
+        .mission-bubble p { margin: 0; font-size: 0.95rem; color: #1e3a8a; line-height: 1.6; }
         .month-bubble-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            background: #fafafa;
-            padding: 10px 20px;
-            border-radius: var(--bubble-radius);
-            border: 1px solid var(--border);
+            display: flex; justify-content: space-between; align-items: center;
+              margin-bottom: 20px; background: #fafafa; padding: 10px 20px; border-radius: var(--bubble-radius); border: 1px solid var(--border);
         }
-
-        .month-bubble-label {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-
-        .arrow-bubble {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-muted);
-        }
-
-        .arrow-bubble:hover {
-            background: var(--accent-light);
-            color: var(--accent);
-        }
-
-        .days-bubble-matrix {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 8px;
-            text-align: center;
-        }
-
-        .bubble-header-cell {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            padding-bottom: 5px;
-        }
+        .month-bubble-label { font-size: 1rem; font-weight: 700; color: var(--primary); }
+        .arrow-bubble { background: #ffffff; border: 1px solid var(--border); width: 34px; height: 34px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--text-muted); }
+        .days-bubble-matrix { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center; }
+        .bubble-header-cell { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; padding-bottom: 5px; }
         .bubble-day-cell {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-main);
-            height: 44px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.15s ease;
+            background: #ffffff; border: 1px solid var(--border); font-size: 0.95rem; font-weight: 600;
+            color: var(--text-main); height: 44px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center;
         }
+        .bubble-day-cell:hover:not(.disabled) { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+        .bubble-day-cell.active-bubble { background: var(--accent) !important; color: #ffffff !important; border-color: var(--accent) !important; }
+        .bubble-day-cell.disabled { color: #cbd5e1; background: #f8fafc; cursor: not-allowed; border-color: #f1f5f9; }
+        .vertical-time-layer { border-top: 1px solid var(--border); padding-top: 25px; display: none; margin-top: 25px; text-align: left; }
+        .vertical-time-layer.visible { display: block; }
+        .time-bubble-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .bubble-time-node { background: #ffffff; border: 1px solid var(--border); color: var(--accent); padding: 12px; border-radius: var(--pill-radius); font-size: 0.9rem; font-weight: 700; cursor: pointer; text-align: center; }
+        .bubble-time-node:hover { background: var(--success); color: #ffffff; border-color: var(--success); }
+        footer { margin-top: 60px; text-align: center; padding: 30px; border-top: 1px solid var(--border); background: #ffffff; font-size: 0.9rem; color: var(--text-muted); }
+    </style>
+</head>
+<body>
 
-        .bubble-day-cell:hover:not(.disabled) {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: var(--accent-light);
-        }
+<header>
+    <div class="logo-text">VORTEX SONIC METRICS</div>
+    <div class="region-badge">NYC & Long Island Node</div>
+</header>
 
-        .bubble-day-cell.active-bubble {
-            background: var(--accent) !important;
-            color: #ffffff !important;
-            border-color: var(--accent) !important;
-            font-weight: 700;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
-        }
- .bubble-day-cell.disabled {
-            color: #cbd5e1;
-            background: #f8fafc;
-            cursor: not-allowed;
-            border-color: #f1f5f9;
-        }
+<div class="main-container">
+    <div class="bubble-card">
+        <h2>Architectural Deliverables</h2>
+        <p>Deploy high-performance software asset nodes that eliminate scheduling leakage and client communication overhead.</p>
+        <div class="feature-bubble">
+            <div class="feature-check">✓</div>
+            <div>
+                <h4 style="margin:0 0 20px 0;">24/7 Operations Hub</h4>
+                <p style="margin:0;">Allows trade clients to establish, modify, or terminate dispatch requests anytime.</p>
+            </div>
+        </div>
+    </div>
 
-        /* VERTICAL TIME SETTING INNER BLOCK STRATEGIES */
-        .vertical-time-layer {
-            border-top: 1px solid var(--border);
-            padding-top: 25px;
-            display: none;
-            animation: fadeIn 0.25s ease-out;
-            text-align: left;
-        }
+    <div class="bubble-card">
+        <h2>Infrastructure Placement</h2>
+        <div class="pricing-bubble">
+            <div class="pricing-value">\$499 Setup + \$299/mo</div>
+        </div>
+        <a href="PASTE_YOUR_STRIPE_LINK_HERE" class="checkout-bubble-btn">Activate Infrastructure Core</a>
+    </div>
+    <div class="bubble-card">
+        <h2>Live System Demonstration</h2>
+        <div class="mission-bubble">
+            <h4>CandidTime™ Operational Layer</h4>
+            <p>Vortex Sonic Metrics was founded with a singular mission: to eliminate the operational friction and missed revenue gaps that hold back local trade companies. As automation architects, we design clean, zero-overhead technical pipelines that integrate modern enterprise scheduling and secure payment gateways straight into a business's workflow.</p>
+        </div>
 
-        .vertical-time-layer.visible {
-            display: block;
-        }
+        <div class="month-bubble-row">
+            <button class="arrow-bubble">‹</button>
+            <span class="month-bubble-label">October 2026</span>
+            <button class="arrow-bubble">›</button>
+        </div>
+        
+        <div class="days-bubble-matrix">
+            <div class="bubble-header-cell">Sun</div><div class="bubble-header-cell">Mon</div><div class="bubble-header-cell">Tue</div><div class="bubble-header-cell">Wed</div><div class="bubble-header-cell">Thu</div><div class="bubble-header-cell">Fri</div><div class="bubble-header-cell">Sat</div>
+            <div class="bubble-day-cell disabled">27</div><div class="bubble-day-cell disabled">28</div><div class="bubble-day-cell disabled">29</div><div class="bubble-day-cell disabled">30</div>
+            <button class="bubble-day-cell" onclick="handleVerticalSlide('Thursday, Oct 1', this)">1</button>
+            <button class="bubble-day-cell" onclick="handleVerticalSlide('Friday, Oct 2', this)">2</button>
+            <button class="bubble-day-cell" onclick="handleVerticalSlide('Saturday, Oct 3', this)">3</button>
+            <button class="bubble-day-cell" onclick="handleVerticalSlide('Sunday, Oct 4', this)">4</button>
+            <button class="bubble-day-cell" onclick="handleVerticalSlide('Monday, Oct 5', this)">5</button>
+            <button class="bubble-day-cell" onclick="handleVerticalSlide('Tuesday, Oct 6', this)">6</button>
+            <button class="bubble-day-cell" onclick="handleVerticalSlide('Wednesday, Oct 7', this)">7</button>
+        </div>
+         <div class="vertical-time-layer" id="vertical-time-tray">
+            <div id="vertical-date-label" style="font-weight:700; margin-bottom:12px;">Available Slots:</div>
+            <div class="time-bubble-grid">
+                <button class="bubble-time-node" onclick="alert('Time Selected')">12:00 AM</button>
+                <button class="bubble-time-node" onclick="alert('8:00 AM')">8:00 AM</button>
+                <button class="bubble-time-node" onclick="alert('12:00 PM')">12:00 PM</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-        .time-layer-title {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 15px;
-            padding-left: 5px;
-        }
-         .time-bubble-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 10px;
-        }
+<footer>
+    <p>&copy; 2026 Vortex Sonic Metrics LLC. All rights reserved.</p>
+</footer>
 
-        @media (max-width: 550px) {
-            .time-bubble-grid { grid-template-columns: repeat(2, 1fr); }
-        }
+<script>
+    function handleVerticalSlide(dateText, element) {
+        document.querySelectorAll('.bubble-day-cell').forEach(el => el.classList.remove('active-bubble'));
+        element.classList.add('active-bubble');
+        document.getElementById('vertical-time-tray').classList.add('visible');
+        document.getElementById('vertical-date-label').innerText = `Available Slots For ${dateText}:`;
+    }
+    /script>
 
-        .bubble-time-node {
-            background: #ffffff;
-            border: 1px solid var(--border);
-            color: var(--accent);
-            padding: 12px;
-            border-radius: var(--pill-radius);
-            font-size: 0.9rem;
-            font-weight: 700;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.15s ease;
-        }
-
-        .bubble-time-node:hover {
-            background: var(--success);
-            color: #ffffff;
-            border-color: var(--success);
-             box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
-        }
-
-        footer {
-            margin-top: 80px;
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid var(--border);
-            background: #ffffff;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        .footer-links a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 600;
-            margin: 0 10px;
-        }
+</body>
+</html>
