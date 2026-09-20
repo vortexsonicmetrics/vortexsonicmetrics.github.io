@@ -3,197 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CandidTime Routing Hub - Vortex Sonic Metrics LLC</title>
+    <title>Vortex Sonic Metrics | Automated Calendar Solutions</title>
     <style>
-        :root {
-            --bg-main: #f8fafc;
-            --surface: #ffffff;
-            --text-primary: #0f172a;
-            --text-secondary: #64748b;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --border: #e2e8f0;
-            --success: #16a34a;
-        }
+        :root { --primary: #0f172a; --accent: #2563eb; --text: #334155; --bg: #f8fafc; --success: #10b981; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; padding: 60px 20px; text-align: center; border-bottom: 4px solid var(--accent); }
+        header h1 { margin: 0; font-size: 2.5rem; font-weight: 800; }
+        header p { margin: 10px auto 0; color: #94a3b8; font-size: 1.1rem; max-width: 600px; }
+        
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+        
+        .card { background: #fff; padding: 35px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
+        .card h2 { margin-top: 0; color: var(--primary); font-size: 1.6rem; }
+        .price-tag { background: #f1f5f9; padding: 15px; border-radius: 8px; font-weight: 700; color: var(--accent); font-size: 1.5rem; margin: 15px 0; display: inline-block; }
+        .bullet-list { padding-left: 20px; margin: 20px 0; color: #475569; }
+        .bullet-list li { margin-bottom: 12px; }
+        
+        .checkout-btn { display: block; text-align: center; background: var(--success); color: #fff; text-decoration: none; padding: 16px; font-size: 1.1rem; font-weight: 700; border-radius: 6px; transition: background 0.2s; margin-top: 25px; }
+        .checkout-btn:hover { background: #059669; }
+         
+        /* STATUS INFRASTRUCTURE STYLES */
+        .status-box { background: #fff; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 35px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .status-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 15px; }
+        .pulse-dot { width: 10px; height: 10px; background-color: var(--success); border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+        .window-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .window-item { background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px; border-radius: 8px; text-align: center; }
+        .window-time { font-weight: 700; color: var(--primary); font-size: 1.1rem; }
+        .window-status { font-size: 0.85rem; color: var(--success); font-weight: 600; margin-top: 4px; }
+        
+        /* INTERACTIVE SERVICE MATRIX STYLES */
+        .matrix-box { background: #fff; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; margin-top: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .matrix-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 20px; }
+        @media (max-width: 768px) { .matrix-options { grid-template-columns: 1fr; } }
+        .matrix-card { border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; background: #f8fafc; }
+        .matrix-card:hover { border-color: var(--accent); background: #fff; transform: translateY(-2px); }
+        .matrix-card.active { border-color: var(--accent); background: #eff6ff; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1); }
+        .matrix-title { font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+        .matrix-desc { font-size: 0.85rem; color: #64748b; }
+        .display-panel { margin-top: 25px; padding: 20px; background: #0f172a; color: #38bdf8; border-radius: 8px; font-family: monospace; font-size: 0.9rem; border-left: 4px solid var(--accent); }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-primary);
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            align-items: center;
-        }
-
-        .hub-container {
-            background: var(--surface);
-            max-width: 960px;
-            width: 100%;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            overflow: hidden;
-        }
-         @media (max-width: 768px) {
-            .hub-container { grid-template-columns: 1fr; }
-        }
-
-        /* Profile & Details Panel */
-        .info-panel {
-            padding: 40px;
-            border-right: 1px solid var(--border);
-            background: linear-gradient(to bottom right, #ffffff, #f8fafc);
-        }
-
-        .brand-badge {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            background: #e0f2fe;
-            color: #0369a1;
-            padding: 4px 10px;
-            border-radius: 20px;
-            font-weight: 700;
-        }
-
-        .company-title {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin: 15px 0 5px 0;
-             font-weight: 500;
-        }
-
-        .product-title {
-            font-size: 2.2rem;
-            margin: 0 0 20px 0;
-            font-weight: 800;
-            letter-spacing: -0.03em;
-        }
-
-        .description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-size: 0.95rem;
-        }
-
-        /* Interactive Scheduling Panel */
-        .scheduler-panel {
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .section-heading {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            color: var(--text-primary);
-        }
-         .time-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 10px;
-        }
-
-        .time-slot-btn {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-            padding: 14px;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            text-align: center;
-        }
-
-        .time-slot-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-            background: #eff6ff;
-            transform: translateY(-1px);
-        }
-        .console-log {
-            margin-top: 25px;
-            padding: 12px;
-            border-radius: 6px;
-            background: #f1f5f9;
-            border: 1px solid var(--border);
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            text-align: center;
-            font-weight: 500;
-        }
-
-        footer {
-            margin-top: 40px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-            margin: 0 10px;
+        footer { margin-top: 60px; text-align: center; padding: 25px; border-top: 1px solid #e2e8f0; font-size: 0.9rem; }
+         @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
     </style>
 </head>
 <body>
-    <div class="hub-container">
-    <!-- LEFT PANEL: PROPRIETARY LLC DATA INFRASTRUCTURE -->
-    <div class="info-panel">
-        <span class="brand-badge">Vortex Sonic Metrics LLC</span>
-        <div class="company-title">Secure Enterprise Framework</div>
-        <h1 class="product-title">CandidTime</h1>
-        <p class="description">
-            Welcome to the direct operational access node. This interface acts as the decoupled intake layer for premium localized market confirmation. 
-        </p>
-        <p class="description" style="margin-top: 15px;">
-            Select an active pipeline synchronization window on the right to anchor your coordination route securely inside our corporate database.
-        </p>
-    </div>
 
-    <!-- RIGHT PANEL: CLEAN SELECTION GRID -->
-    <div class="scheduler-panel">
-        <div class="section-heading">Available Deployment Windows</div>
-        
-        <div class="time-grid">
-            <button class="time-slot-btn" onclick="triggerSync('09:00 AM Standard Node')">09:00 AM Session</button>
-            <button class="time-slot-btn" onclick="triggerSync('11:30 AM Standard Node')">11:30 AM Session</button>
-            <button class="time-slot-btn" onclick="triggerSync('02:00 PM Extended Node')">02:00 PM Session</button>
-            <button class="time-slot-btn" onclick="triggerSync('04:30 PM Express Node')">04:30 PM Session</button>
+<header>
+    <h1>Vortex Sonic Metrics</h1>
+    <p>On-Demand Automated Scheduling Engines for Trade Providers</p>
+</header>
+
+<div class="container">
+      <!-- REGIONAL SYSTEM STATUS SECTION -->
+    <div class="status-box">
+        <div class="status-header">
+            <h3 style="margin:0; color: var(--primary); display: flex; align-items: center; gap: 10px;">
+                <span class="pulse-dot"></span> CandidTime™ Infrastructure System Status
+            </h3>
+            <span style="font-size: 0.85rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 20px;">All-Hours Active</span>
         </div>
-        <div id="status-display" class="console-log">
-            Status: System Armed. Awaiting client node routing input.
+        <p style="margin: 0 0 15px 0; font-size: 0.95rem; color: #64748b;">Current regional network window allocations for automated contractor dispatch deployments:</p>
+        
+        <div class="window-grid">
+            <div class="window-item">
+                <div style="font-size: 0.8rem; text-transform: uppercase; color: #64748b; font-weight: 600;">NYC Borough Sessions</div>
+                <div class="window-time">24/7/365 On-Demand</div>
+                <div class="window-status">🟢 Nodes Online</div>
+            </div>
+            <div class="window-item">
+                <div style="font-size: 0.8rem; text-transform: uppercase; color: #64748b; font-weight: 600;">Long Island Sessions</div>
+                <div class="window-time">All Hours Active</div>
+                <div class="window-status">🟢 Routing Clear</div>
+            </div>
+            <div class="window-item">
+                <div style="font-size: 0.8rem; text-transform: uppercase; color: #64748b; font-weight: 600;">Self-Service Processing</div>
+                <div class="window-time">&lt; 250ms Latency</div>
+                <div class="window-status">🟢 Zero Delay</div>
+            </div>
+        </div>
+        </div>
+
+    <div class="grid">
+        <!-- THE VALUE SYSTEM STATEMENT -->
+        <div class="card" style="border-top: 4px solid var(--accent);">
+            <h2>⚙️ Software Infrastructure License</h2>
+            <p>We deploy full-scale, hands-off scheduling assets for trade operations. Stop dropping revenue windows to manual booking or phone cancellation gaps.</p>
+            <ul class="bullet-list">
+                <li><strong>24/7 Calendar Infrastructure:</strong> Clients self-schedule, modify, or cancel dispatch requests entirely on their own.</li>
+                <li><strong>Real-Time Mobile Bridge:</strong> All automated reservations inject instantly straight into your field crew's personal mobile screens.</li>
+                <li><strong>Automated Seat Clearance:</strong> System securely opens canceled slots back up for new paying accounts on autopilot.</li>
+            </ul>
+        </div>
+
+        <!-- THE SELF-SERVICE CHECKOUT FRAME -->
+        <div class="card" style="border-top: 4px solid var(--success);">
+            <h2>💼 License Activation</h2>
+            <p>Secure an active infrastructure node setup for your regional service territory.</p>
+            <div class="price-tag">$499 Setup + $299/mo</div>
+            <p style="font-size: 0.85rem; color: #64748b; margin: 0;">*Flat baseline processing rate. Fixed pricing tier framework. Cancel anytime via standard service protocols.</p>
+            
+            <!-- PASTE YOUR STRIPE URL IN HREF BELOW -->
+            <a href="PASTE_YOUR_STRIPE_LINK_HERE" class="checkout-btn">Activate Automation System</a>
         </div>
     </div>
+    <!-- INTERACTIVE WHITE-LABELED SERVICE MATRIX MODULE -->
+    <div class="matrix-box">
+        <h2 style="margin-top:0; color: var(--primary);">🕹️ Live CandidTime™ Interface Simulation</h2>
+        <p style="color: var(--text); margin-bottom: 10px;">Click an operations button below to simulate how the framework processes different field sessions instantly without human administration:</p>
+        
+        <div class="matrix-options">
+            <div class="matrix-card active" onclick="updateSim('booking', this)">
+                <div class="matrix-title">📝 1. Request Dispatch</div>
+                <div class="matrix-desc">Processes incoming customer booking allocations natively.</div>
+            </div>
+            <div class="matrix-card" onclick="updateSim('modification', this)">
+                <div class="matrix-title">🔄 2. Modify Session</div>
+                <div class="matrix-desc">Allows clients to securely shift time frames instantly.</div>
+            </div>
+            <div class="matrix-card" onclick="updateSim('cancellation', this)">
+                <div class="matrix-title">❌ 3. Clear Slot</div>
+                <div class="matrix-desc">Wipes canceled windows and frees the node automatically.</div>
+            </div>
+        </div>
+
+        <!-- THE OUTPUT FLOW DATA WINDOW -->
+        <div id="sim-display" class="display-panel">
+            &gt; SYSTEM STATE: IDLE // Awaiting matrix instruction token...
+        </div>
+        </div>
 </div>
 
 <footer>
-    <p>&copy; 2026 Vortex Sonic Metrics LLC. All rights reserved. CandidTime is an engineered scheduling asset of Vortex Sonic Metrics LLC.</p>
-    <p>
-        <a href="terms.html">Terms of Service &amp; Compliance</a> | 
-        <a href="faq.html">System Documentation</a>
-    </p>
-</footer>
-
-<script>
-    function triggerSync(nodeSignature) {
-        const display = document.getElementById('status-display');
-        display.style.background = '#f0fdf4';
-        display.style.borderColor = '#bbf7d0';
-        display.style.color = 'var(--success)';
-        display.innerHTML = '✔ Success: Ingestion pipeline mapped via ' + nodeSignature + '. Dispatch parameters confirmed under corporate structural guidelines.';
-          }
-</script>
-
-</body>
-</html>
+    <p>&copy; 2026 Vortex Sonic Metrics LLC. CandidTime™ is a proprietary software infrastructure asset operated exclusively by Vortex Sonic Metrics LLC. All rights reserved.</p>
+    <a href="faq.html" style="color: var(--accent); text-decoration: none; font-weight: 600; margin: 0 10px;">Frequently Asked Questions (FAQ)</a> | 
