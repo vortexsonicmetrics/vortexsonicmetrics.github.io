@@ -3,310 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Node - Vortex Sonic Metrics LLC</title>
+    <title>Vortex Sonic Metrics | Enterprise Scheduling Infrastructure</title>
     <style>
         :root {
-            --bg-main: #f8fafc;
-            --surface: #ffffff;
-            --text-primary: #0f172a;
-            --text-secondary: #475569;
+            --primary: #0f172a;
             --accent: #2563eb;
-            --accent-hover: #1d4ed8;
+            --accent-light: #f0f6ff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-page: #f1f5f9;
+            --bg-card: #ffffff;
             --border: #e2e8f0;
-            --success: #16a34a;
-            --success-bg: #f0fdf4;
+            --success: #10b981;
+            --bubble-radius: 24px;
+            --pill-radius: 12px;
         }
 body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-primary);
             margin: 0;
-            padding: 60px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            padding: 0;
+            background-color: var(--bg-page);
+            color: var(--text-main);
+            -webkit-font-smoothing: antialiased;
         }
 
-        .section-wrapper {
-            max-width: 760px;
-            width: 100%;
-            margin-bottom: 30px;
-        }
-
-        /* Sophisticated Executive Header */
-        .brand-header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .corporate-entity {
-            font-size: 2.2rem;
-            font-weight: 800;
-            letter-spacing: -0.04em;
-            color: var(--text-primary);
-            margin: 0;
-        }
-         .product-subtitle {
-            display: inline-block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-top: 8px;
-        }
-
-        .description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 20px auto 0 auto;
-        }
-
-        /* License Activation Card */
-        .checkout-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
- .checkout-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .price-flex {
+        header {
+            background: var(--bg-card);
+            padding: 20px 40px;
+            border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
         }
 
-        .price-tag {
-            font-size: 1.6rem;
+        .logo-text {
+            font-size: 1.15rem;
             font-weight: 800;
-        }
-.checkout-btn {
-            background: #0f172a;
-            color: #ffffff;
-            padding: 12px 24px;
-            border-radius: 6px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: background 0.15s ease;
+            color: var(--primary);
+            letter-spacing: -0.02em;
         }
 
-        .checkout-btn:hover {
-            background: #1e293b;
-        }
-
-        /* Premium Live System Demonstration */
-        .demo-section {
-            background: var(--surface);
-            padding: 35px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-        }
-
-        .section-heading {
-            font-size: 1.25rem;
+        .region-badge {
+            font-size: 0.8rem;
             font-weight: 700;
-            margin: 0 0 10px 0;
-             }
+background: var(--accent-light);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: var(--bubble-radius);
+        }
 
-        .demo-instruction {
-            margin-0: 0;
-            color: var(--text-secondary);
+        .main-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* FLEX BUBBLE CARD WRAPPERS */
+        .bubble-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--bubble-radius);
+            padding: 35px;
+            box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.04);
+            margin-bottom: 30px;
+            text-align: left;
+        }
+ .bubble-card h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0 0 15px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .bubble-card p {
             font-size: 0.95rem;
+            color: var(--text-muted);
             line-height: 1.6;
+            margin: 0 0 25px 0;
+        }
+
+        .feature-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
             margin-bottom: 25px;
         }
 
-        /* Integrated Calendar View Engine Layout */
-        .calendar-box {
+        .feature-bubble {
+            display: flex;
+            gap: 12px;
+            background: #fafafa;
+            padding: 16px 20px;
+            border-radius: var(--pill-radius);
             border: 1px solid var(--border);
-            border-radius: 8px;
-            overflow: hidden;
+        }
+         .feature-check {
+            color: var(--success);
+            font-weight: bold;
         }
 
-        .calendar-month-bar {
-            background: #f8fafc;
-            padding: 14px;
-            font-weight: 700;
-            text-align: center;
-             border-bottom: 1px solid var(--border);
+        .feature-info h4 {
+            margin: 0 0 2px 0;
             font-size: 1rem;
-            letter-spacing: 0.02em;
-        }
-
-        .calendar-days-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            text-align: center;
-            background: #ffffff;
-        }
-
-        .weekday-label {
-            font-size: 0.75rem;
             font-weight: 700;
-            color: #94a3b8;
-            padding: 10px 0;
-            background: #fdfdfd;
-            border-bottom: 1px solid var(--border);
         }
 
-        .date-cell {
-            padding: 14px 0;
+        .feature-info p {
+            margin: 0;
             font-size: 0.9rem;
-            font-weight: 600;
-             border-bottom: 1px solid #f1f5f9;
-            border-right: 1px solid #f1f5f9;
-            cursor: pointer;
-            transition: all 0.15s ease;
+            color: var(--text-muted);
         }
 
-        .date-cell:hover {
-            background: #eff6ff;
+        .pricing-bubble {
+            background: var(--bg-page);
+            border-radius: var(--pill-radius);
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+         .pricing-value {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .checkout-bubble-btn {
+            display: block;
+            text-align: center;
+            background: var(--success);
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            border-radius: var(--pill-radius);
+            transition: transform 0.15s ease, background 0.15s ease;
+        }
+
+        .checkout-bubble-btn:hover {
+            background: #059669;
+            transform: scale(1.01);
+        }
+
+        /* ------------------------------------------------ */
+        /* VERTICAL FLEX BUBBLE CANDIDTIME SCHEDULER MATRIX */
+        /* ------------------------------------------------ */
+        .showcase-heading {
+            text-align: left;
+            margin: 40px 0 15px 10px;
+        }
+
+        .showcase-heading h3 {
+            margin: 0 0 4px 0;
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .showcase-heading p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .vertical-engine-bubble {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--bubble-radius);
+            padding: 35px;
+            box-shadow: 0 20px 40px -20px rgba(0,0,0,0.06);
+            display: flex;
+             flex-direction: column;
+            gap: 30px;
+        }
+
+        .mission-bubble {
+            background: var(--accent-light);
+            border: 1px solid #dbeafe;
+            padding: 25px;
+            border-radius: var(--pill-radius);
+            text-align: left;
+        }
+
+        .mission-bubble h4 {
+            margin: 0 0 8px 0;
+            color: var(--accent);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 700;
+        }
+
+        .mission-bubble p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #1e3a8a;
+            line-height: 1.6;
+        }
+/* VERTICAL CALENDAR MATRIX TOP LAYER */
+        .calendar-layer {
+            width: 100%;
+        }
+
+        .month-bubble-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background: #fafafa;
+            padding: 10px 20px;
+            border-radius: var(--bubble-radius);
+            border: 1px solid var(--border);
+        }
+
+        .month-bubble-label {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .arrow-bubble {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+        }
+
+        .arrow-bubble:hover {
+            background: var(--accent-light);
             color: var(--accent);
         }
 
-        .date-cell.active {
-            background: var(--accent);
-            color: #ffffff;
-        }
-
-        /* Rolling 24/7 Hours Matrix Panel */
-        .time-picker-title {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            color: var(--text-secondary);
-            margin: 25px 0 12px 0;
-            letter-spacing: 0.05em;
-        }
-
-        .hours-scroll-row {
-            display: flex;
+        .days-bubble-matrix {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
             gap: 8px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-        }
-        .hours-scroll-row::-webkit-scrollbar {
-            height: 6px;
+            text-align: center;
         }
 
-        .hours-scroll-row::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
+        .bubble-header-cell {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            padding-bottom: 5px;
         }
-
-        .hour-chip {
+        .bubble-day-cell {
             background: #ffffff;
             border: 1px solid var(--border);
-            padding: 10px 18px;
-            border-radius: 6px;
-            font-size: 0.85rem;
+            font-size: 0.95rem;
             font-weight: 600;
+            color: var(--text-main);
+            height: 44px;
+            border-radius: 50%;
             cursor: pointer;
-            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.15s ease;
         }
 
-        .hour-chip:hover {
-            border-color: var(--text-primary);
-            background: #f8fafc;
+        .bubble-day-cell:hover:not(.disabled) {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-light);
         }
 
-        .console-log {
-            margin-top: 30px;
-            padding: 16px;
-            border-radius: 6px;
+        .bubble-day-cell.active-bubble {
+            background: var(--accent) !important;
+            color: #ffffff !important;
+            border-color: var(--accent) !important;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+ .bubble-day-cell.disabled {
+            color: #cbd5e1;
             background: #f8fafc;
+            cursor: not-allowed;
+            border-color: #f1f5f9;
+        }
+
+        /* VERTICAL TIME SETTING INNER BLOCK STRATEGIES */
+        .vertical-time-layer {
+            border-top: 1px solid var(--border);
+            padding-top: 25px;
+            display: none;
+            animation: fadeIn 0.25s ease-out;
+            text-align: left;
+        }
+
+        .vertical-time-layer.visible {
+            display: block;
+        }
+
+        .time-layer-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-left: 5px;
+        }
+         .time-bubble-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        @media (max-width: 550px) {
+            .time-bubble-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        .bubble-time-node {
+            background: #ffffff;
             border: 1px solid var(--border);
-            font-size: 0.85rem;
-            color: var(--text-secondary);
+            color: var(--accent);
+            padding: 12px;
+            border-radius: var(--pill-radius);
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
             text-align: center;
-            font-weight: 600;
+            transition: all 0.15s ease;
+        }
+
+        .bubble-time-node:hover {
+            background: var(--success);
+            color: #ffffff;
+            border-color: var(--success);
+             box-shadow: 0 4px 10px rgba(16, 185, 129, 0.2);
         }
 
         footer {
-            margin-top: 50px;
+            margin-top: 80px;
             text-align: center;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
+            padding: 40px 20px;
             border-top: 1px solid var(--border);
-            padding-top: 20px;
+            background: #ffffff;
+            font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
-        footer a {
-            color: var(--text-secondary);
+        .footer-links a {
+            color: var(--accent);
             text-decoration: none;
+            font-weight: 600;
             margin: 0 10px;
         }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
-<body>
-    <!-- PREMIUM BRAND PANEL -->
-<div class="section-wrapper brand-header">
-    Vortex Sonic Metrics LLC</h1>
-    <span class="product-subtitle">CandidTime Platform</span>
-    <p class="description">
-        Secure enterprise ingestion pipelines engineered for immediate localized scheduling control and transparent data routing protocols.
-    </p>
-</div>
-
-<!-- LICENSE MODULE -->
-<div class="section-wrapper">
-    <div class="checkout-card">
-        <div class="checkout-title">Enterprise License Activation</div>
-        <p style="margin: 0; color: var(--text-secondary); font-size: 0.95rem;">Deploy an isolated processing channel for your regional territory operations.</p>
-        <div class="price-flex">
-            <div>
-                <div class="price-tag">$499 Setup + $299/mo</div>
-                <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px;">*Fixed architectural scale pricing. Unified compliance layer.</div>
-            </div>
-            <a href="PASTE_YOUR_STRIPE_LINK_HERE" class="checkout-btn">Activate System Node</a>
-        </div>
-    </div>
-</div>
-<!-- PROFESSIONAL LIVE DEMONSTRATION -->
-<div class="section-wrapper">
-    <div class="demo-section">
-        <div class="section-heading">Live System Demonstration</div>
-        <p class="demo-instruction">
-            Test the mechanics of our scheduling engine below. Select an open window to see how fluidly a client secures or alters a deployment slot without ever speaking with a live phone operator.
-        </p>
-
-        <!-- 24/7 CALENDAR SYSTEM ENGINE WITH MONTHLY DATE VIEWS -->
-        <div class="calendar-box">
-            <div id="calendar-month-label" class="calendar-month-bar">October 2026</div>
-            <div class="calendar-days-grid">
-                <div class="weekday-label">Sun</div><div class="weekday-label">Mon</div><div class="weekday-label">Tue</div>
-                <div class="weekday-label">Wed</div><div class="weekday-label">Thu</div><div class="weekday-label">Fri</div>
-                <div class="weekday-label">Sat</div>
-
-                <!-- Active Functional Date Row Blocks -->
-                <div class="date-cell" onclick="selectDate(this, 18)">18</div>
-                <div class="date-cell" onclick="selectDate(this, 19)">19</div>
-                <div class="date-cell active" onclick="selectDate(this, 20)">20</div>
-                <div class="date-cell" onclick="selectDate(this, 21)">21</div>
-                <div class="date-cell" onclick="selectDate(this, 22)">22</div>
-                <div class="date-cell" onclick="selectDate(this, 23)">23</div>
-                <div class="date-cell" onclick="selectDate(this, 24)">24</div>
-            </div>
-        </div>
-<div class="time-picker-title">Select rolling 24-hour delivery increment</div>
-        <div class="hours-scroll-row">
