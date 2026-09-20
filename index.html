@@ -342,4 +342,248 @@ git push -u origin main
     alert(`Appointment Confirmed!\n\nDate: ${activeDate}\nTime Slot: ${activeSlot}\n\nAutomated dispatch notification sent via CandidTime™ Core Infrastructure.`);
   }
 </script>            
-      
+<style>
+  :root {
+    --green-accent: #059669;
+    --green-hover: #047857;
+    --green-light: #ecfdf5;
+    --text-dark: #0f172a;
+    --text-muted: #475569;
+    --border-color: #e2e8f0;
+  }
+
+  .site-footer-sections {
+    max-width: 900px;
+    margin: 4rem auto 2rem auto;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-dark);
+  }
+
+  .section-divider {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 3rem 0;
+  }
+
+  .footer-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-heading::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 24px;
+    background-color: var(--green-accent);
+    border-radius: 3px;
+  }
+
+  .footer-subheading {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  /* FAQ Styles */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background: #ffffff;
+    transition: border-color 0.2s ease;
+  }
+
+  .faq-item:hover {
+    border-color: var(--green-accent);
+  }
+
+  .faq-question {
+    width: 100%;
+    padding: 1.2rem;
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-question .toggle-icon {
+    font-weight: bold;
+    color: var(--green-accent);
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item.active .toggle-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background: #f8fafc;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 1.2rem;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 1rem 1.2rem 1.2rem 1.2rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  /* Terms of Service Styles */
+  .terms-card {
+    background: #ffffff;
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--green-accent);
+    border-radius: 8px;
+    padding: 1.8rem;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03);
+  }
+
+  .terms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .terms-block h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .terms-block h4 span {
+    color: var(--green-accent);
+    font-weight: 700;
+  }
+
+  .terms-block p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  .terms-footer-note {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-color);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+</style>
+
+<div class="site-footer-sections">
+  <!-- FAQ Section -->
+  <section id="faq">
+    <h2 class="footer-heading">Frequently Asked Questions</h2>
+    <p class="footer-subheading">Common queries regarding system integration, dispatch blocks, and service licensing.</p>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How does the setup process work for trade companies?
+          <span class="toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Once activated, our technical architects configure your custom CandidTime™ scheduling and routing infrastructure directly into your operational workflow within 48 to 72 hours.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Is there a contract or long-term commitment?
+          <span class="toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          No. We offer a flat production license structure with a fixed monthly rate ($299/mo) and a one-time setup fee ($499). You can exit or pause your system license loop at any time.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How does CandidTime™ handle dispatch routing for field technicians?
+          <span class="toggle-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          The system automatically matches real-time customer bookings against active operator zones in NYC, Nassau, and Suffolk, placing requests directly into available 24/7 routing blocks without human dispatch overhead.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- Terms of Service Section -->
+  <section id="terms">
+    <h2 class="footer-heading">Terms of Service</h2>
+    <p class="footer-subheading">Operating agreement and system usage guidelines for Vortex Sonic Metrics assets.</p>
+
+    <div class="terms-card">
+      <div class="terms-grid">
+        <div class="terms-block">
+          <h4><span>01.</span> License Allocation</h4>
+          <p>Upon payment of the $499 Setup Fee and recurring $299/month license fee, Vortex Sonic Metrics grants a non-exclusive, non-transferable license to access and run the operational scheduling and automated routing pipeline.</p>
+        </div>
+
+        <div class="terms-block">
+          <h4><span>02.</span> Cancellation Policy</h4>
+          <p>You may cancel your subscription loop at any time without penalty or termination fees. Service remains active through the end of the current paid billing cycle.</p>
+        </div>
+
+        <div class="terms-block">
+          <h4><span>03.</span> Security & Uptime</h4>
+          <p>Vortex Sonic Metrics maintains a zero-overhead, highly resilient cloud architecture aiming for maximum runtime availability for live customer scheduling and payment gateway processing.</p>
+        </div>
+      </div>
+
+      <div class="terms-footer-note">
+        Last updated: October 2026 • Vortex Sonic Metrics NYC & Long Island Enterprise Node
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  function toggleFaq(button) {
+    const item = button.parentElement;
+    const isActive = item.classList.contains('active');
+    
+    // Close all open FAQs
+    document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('active'));
+    
+    // Toggle clicked FAQ
+    if (!isActive) {
+      item.classList.add('active');
+    }
+  }
+</script>      
