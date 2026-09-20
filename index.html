@@ -288,73 +288,43 @@
   }
 </style>
 
-<div class="candidtime-container">
+<!-- 1. Date Picker with Month Header -->
+<div>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+    <div style="font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b;">
+      1. Select Dispatch Date
+    </div>
+    <!-- Month & Year Title -->
+    <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 0.5rem;">
+      <span style="color: #059669;">October 2026</span>
+    </div>
+  </div>
+
+  <div class="calendar-grid" style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center;">
+    <!-- Days of the week -->
+    <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">S</div>
+    <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">M</div>
+    <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">T</div>
+    <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">W</div>
+    <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">T</div>
+    <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">F</div>
+    <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">S</div>
+
+    <!-- Disabled previous month dates -->
+    <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; color: #cbd5e1; background: #f8fafc;">27</div>
+    <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; color: #cbd5e1; background: #f8fafc;">28</div>
+    <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; color: #cbd5e1; background: #f8fafc;">29</div>
+    <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; color: #cbd5e1; background: #f8fafc;">30</div>
+    
+    <!-- Selectable Days in October -->
+    <div class="date-cell" onclick="selectDate(this, 'Oct 1, 2026')" style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; font-weight: 500; background: #ffffff;">1</div>
+    <div class="date-cell" onclick="selectDate(this, 'Oct 2, 2026')" style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; font-weight: 500; background: #ffffff;">2</div>
+    <div class="date-cell" onclick="selectDate(this, 'Oct 3, 2026')" style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; font-weight: 500; background: #ffffff;">3</div>
+  </div>
+</div>
   <!-- B2B Informational Overview Header -->
   <div class="b2b-info-banner">
-    <h3>CandidTime™ Automated B2B Dispatch & Scheduling</h3>
-    <!-- CandidTime™ Automated B2B Dispatch & Scheduling -->
-<div class="candidtime-container" style="max-width: 900px; margin: 2rem auto; font-family: system-ui, -apple-system, sans-serif; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); overflow: hidden;">
-  
-  <div style="background: #f8fafc; padding: 1.5rem; border-bottom: 1px solid #e2e8f0;">
-    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">CandidTime™ Automated B2B Dispatch & Scheduling</h3>
-    <p style="margin: 0; color: #475569; font-size: 0.95rem; line-height: 1.5;">
-      Empower trade contractors and enterprise clients to lock in real-time technical dispatch slots instantly. License includes setup and operation for <strong style="color: #059669;">$499 Setup + $299/mo</strong>.
-    </p>
-  </div>
-
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; padding: 1.5rem;">
-    <!-- Calendar Column -->
-    <div>
-      <div style="font-weight: 600; margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b;">1. Select Dispatch Date</div>
-      <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center;">
-        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">S</div>
-        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">M</div>
-        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">T</div>
-        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">W</div>
-        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">T</div>
-        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">F</div>
-        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">S</div>
-
-        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; color: #cbd5e1; background: #f8fafc;">27</div>
-        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; color: #cbd5e1; background: #f8fafc;">28</div>
-        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; color: #cbd5e1; background: #f8fafc;">29</div>
-        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; color: #cbd5e1; background: #f8fafc;">30</div>
-        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; font-weight: 500;" onclick="selectDate(this, 'Oct 1, 2026')">1</div>
-        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; font-weight: 500;" onclick="selectDate(this, 'Oct 2, 2026')">2</div>
-        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; font-weight: 500;" onclick="selectDate(this, 'Oct 3, 2026')">3</div>
-      </div>
-    </div>
-
-    <!-- Routing Blocks Column -->
-    <div>
-      <div style="font-weight: 600; margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b;">2. Choose Live Routing Block</div>
-      <div style="display: flex; flex-direction: column; gap: 10px;">
-        <button onclick="selectSlot(this, '08:00 AM - 10:00 AM')" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem;">
-          <span>08:00 AM - 10:00 AM</span>
-          <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: #e2e8f0; color: #334155;">NYC Core</span>
-        </button>
-        <button onclick="selectSlot(this, '10:30 AM - 12:30 PM')" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem;">
-          <span>10:30 AM - 12:30 PM</span>
-          <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: #e2e8f0; color: #334155;">Nassau Zone</span>
-        </button>
-        <button onclick="selectSlot(this, '01:30 PM - 03:30 PM')" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem;">
-          <span>01:30 PM - 03:30 PM</span>
-          <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: #e2e8f0; color: #334155;">Suffolk Zone</span>
-        </button>
-        <button onclick="selectSlot(this, '04:00 PM - 06:00 PM')" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem;">
-          <span>04:00 PM - 06:00 PM</span>
-          <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: #059669; color: #ffffff;">Express 24/7</span>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <div style="padding: 1rem 1.5rem; background: #f8fafc; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
-    <div id="selectionSummary" style="font-size: 0.9rem; color: #475569;">Select a date and time slot to preview instant booking.</div>
-    <button id="bookBtn" disabled onclick="confirmBooking()" style="background: #059669; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer;">1-Click Schedule</button>
-  </div>
-</div> <!-- CandidTime Container CLOSES HERE -->
-
+    
 <!-- SINGLE FAQ & TERMS OF SERVICE SECTION -->
 <div class="site-footer-sections" style="max-width: 900px; margin: 4rem auto 2rem auto; font-family: system-ui, -apple-system, sans-serif;">
   
