@@ -3,74 +3,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vortex Sonic Metrics | Automated Calendar Solutions</title>
+    <title>CandidTime Integration Hub - Vortex Sonic Metrics LLC</title>
     <style>
-        :root { --primary: #0f172a; --accent: #2563eb; --text: #334155; --bg: #f8fafc; --success: #10b981; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; background-color: var(--bg); color: var(--text); line-height: 1.6; }
-        header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; padding: 60px 20px; text-align: center; border-bottom: 4px solid var(--accent); }
-        header h1 { margin: 0; font-size: 2.5rem; font-weight: 800; }
-        header p { margin: 10px auto 0; color: #94a3b8; font-size: 1.1rem; max-width: 600px; }
-        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
-        .grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; }
-        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
-        .card { background: #fff; padding: 35px; border-radius: 16px; border: 1px solid #e2e8f0; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
-        .card h2 { margin-top: 0; color: var(--primary); font-size: 1.6rem; }
-        .price-tag { background: #f1f5f9; padding: 15px; border-radius: 8px; font-weight: 700; color: var(--accent); font-size: 1.5rem; margin: 15px 0; display: inline-block; }
-        .bullet-list { padding-left: 20px; margin: 20px 0; color: #475569; }
-        .bullet-list li { margin-bottom: 12px; }
-        .checkout-btn { display: block; text-align: center; background: var(--success); color: #fff; text-decoration: none; padding: 16px; font-size: 1.1rem; font-weight: 700; border-radius: 6px; transition: background 0.2s; margin-top: 25px; }
-        .checkout-btn:hover { background: #059669; }
-        .demo-section { background: #fff; padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; margin-top: 40px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
-        footer { margin-top: 60px; text-align: center; padding: 20px; border-top: 1px solid #e2e8f0; font-size: 0.9rem; }
-        footer a { color: var(--accent); text-decoration: none; margin: 0 15px; font-weight: 600; }
-        footer a:hover { text-decoration: underline; }
-         </style>
+        :root {
+            --bg-main: #f8fafc;
+            --surface: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border: #e2e8f0;
+            --success: #16a34a;
+            --success-bg: #f0fdf4;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+}
+
+        .hub-container {
+            background: var(--surface);
+            max-width: 1040px;
+            width: 100%;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            display: grid;
+            grid-template-columns: 1.15fr 1fr;
+            overflow: hidden;
+        }
+
+        @media (max-width: 850px) {
+            .hub-container { grid-template-columns: 1fr; }
+        }
+
+        /* LEFT PANEL: Infrastructure Branding & Checkout Engine */
+        .info-panel {
+            padding: 40px;
+            border-right: 1px solid var(--border);
+            background: linear-gradient(to bottom right, #ffffff, #f8fafc);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+             }
+
+        .brand-badge {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .company-title {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin: 20px 0 5px 0;
+            font-weight: 500;
+        }
+
+        .product-title {
+            font-size: 2.4rem;
+            margin: 0 0 15px 0;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+        }
+ .description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        /* Integrated Stripe Checkout Card */
+        .checkout-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-top: 4px solid var(--success);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            margin-top: 20px;
+        }
+
+        .checkout-card h2 {
+            font-size: 1.25rem;
+            margin: 0 0 10px 0;
+            color: var(--text-primary);
+        }
+
+        .price-tag {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin: 15px 0;
+            letter-spacing: -0.02em;
+        }
+         .price-disclaimer {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin: 0 0 20px 0;
+            line-height: 1.4;
+        }
+
+        .checkout-btn {
+            display: block;
+            background: var(--accent);
+            color: #ffffff;
+            text-align: center;
+            padding: 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.15s ease;
+        }
+
+        .checkout-btn:hover {
+            background: var(--accent-hover);
+        }
+         /* RIGHT PANEL: Pure Interactive CandidTime Demo Matrix */
+        .scheduler-panel {
+            padding: 40px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .section-heading {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            color: var(--text-primary);
+        }
+
+        .section-subheading {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0 0 25px 0;
+        }
+
+        .time-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .time-slot-btn {
+            background: var(--surface);
+             border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: center;
+        }
+
+        .time-slot-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: #eff6ff;
+            transform: translateY(-1px);
+        }
+
+        .console-log {
+            margin-top: auto;
+            padding: 14px;
+            border-radius: 6px;
+            background: #f1f5f9;
+            border: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            text-align: center;
+            font-weight: 500;
+            line-height: 1.4;
+            }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        footer a {
+            color: var(--text-secondary);
+            text-decoration: underline;
+            margin: 0 8px;
+        }
+    </style>
 </head>
 <body>
-
-<header>
-    <h1>Vortex Sonic Metrics</h1>
-    <p>On-Demand Automated Scheduling Engines for Trade Providers</p>
-</header>
-<div class="container">
-    <div class="grid">
-        <!-- THE VALUE SYSTEM STATEMENT -->
-        <div class="card" style="border-top: 4px solid var(--accent);">
-            <h2>⚙️ Software Infrastructure License</h2>
-             <p>We deploy full-scale, hands-off scheduling assets for trade operations. Stop dropping revenue windows to manual booking or phone cancellation gaps.</p>
-            <ul class="bullet-list">
-                <li><strong>24/7 Calendar Infrastructure:</strong> Clients self-schedule, modify, or cancel dispatch requests entirely on their own.</li>
-                <li><strong>Real-Time Mobile Bridge:</strong> All automated reservations inject instantly straight into your field crew's personal mobile screens.</li>
-                <li><strong>Automated Seat Clearance:</strong> System securely opens canceled slots back up for new paying accounts on autopilot.</li>
-            </ul>
+div class="hub-container">
+    <!-- LEFT PANEL: INFRASTRUCTURE CORE & BILLING ACTIVATION -->
+    <div class="info-panel">
+        <div>
+            <span class="brand-badge">Vortex Sonic Metrics LLC</span>
+            <div class="company-title">Secure Enterprise Framework</div>
+            <h1 class="product-title">CandidTime</h1>
+            <p class="description">
+                High-integrity data ingestion pipelines optimized for premium localized market verification. Use the coordination engine to anchor operational targets seamlessly.
+            </p>
         </div>
- <!-- THE SELF-SERVICE CHECKOUT FRAME -->
-    </body>
-</html>
-   <!-- THE SELF-SERVICE CHECKOUT FRAME -->
-        <div class="card" style="border-top: 4px solid var(--success);">
+
+        <!-- STRIPE TRANSACTION GATEWAY CARD -->
+        <div class="checkout-card">
             <h2>💼 License Activation</h2>
-            <p>Secure an active infrastructure node setup for your regional service territory.</p>
+            <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">Secure an active infrastructure node setup for your regional service territory.</p>
             <div class="price-tag">$499 Setup + $299/mo</div>
-            <p style="font-size: 0.85rem; color: #64748b; margin: 0;">*Flat baseline processing rate. Fixed pricing tier framework. Cancel anytime via standard service protocols.</p>
+            <p class="price-disclaimer">*Flat baseline processing rate. Fixed pricing tier framework. Cancel anytime via standard service protocols.</p>
             <a href="PASTE_YOUR_STRIPE_LINK_HERE" class="checkout-btn">Activate Automation System</a>
         </div>
     </div>
+     <!-- RIGHT PANEL: LOCAL SCHEDULING RUNTIME ENVIRONMENT -->
+    <div class="scheduler-panel">
+        <h2 class="section-heading">🕹️ Live System Demonstration</h2>
+        <p class="section-subheading">
+            Test the mechanics of our proprietary scheduling matrix. Select a preferred dispatch window below to verify automated territory allocation.
+        </p>
+        
+        <div class="time-grid">
+            <button class="time-slot-btn" onclick="executeRouting('09:00 AM Standard Node')">09:00 AM Session Window</button>
+            <button class="time-slot-btn" onclick="executeRouting('11:30 AM Standard Node')">11:30 AM Session Window</button>
+            <button class="time-slot-btn" onclick="executeRouting('02:00 PM Extended Node')">02:00 PM Session Window</button>
+            <button class="time-slot-btn" onclick="executeRouting('04:30 PM Express Node')">04:30 PM Session Window</button>
+        </div>
 
-    <!-- THE LIVE INTERACTIVE DEMO (KEEPS THE ENGINE, REMOVES THE OLD BIO TEXT) -->
-    <div class="demo-section">
-        <h2 style="margin-top:0; color: var(--primary);">🕹️ Live CandidTime System Demonstration</h2>
-        <p style="margin-bottom:20px;">Test the mechanics of our proprietary scheduling matrix below. Select an open deployment window to see how fluidly a client secures or alters a dispatch slot without ever speaking with a live phone operator.</p>
-        <iframe src="https://calendly.com" width="100%" height="600" frameborder="0" style="border:none; border-radius: 8px;"></iframe>
-    </div>     
+        <div id="status-console" class="console-log">
+            System Status: Armed. Awaiting client node routing verification input.
+        </div>
     </div>
+</div>
 
 <footer>
-    <p>&copy; 2026 Vortex Sonic Metrics LLC. CandidTime is a proprietary software asset operated by Vortex Sonic Metrics LLC. All rights reserved.</p>
-    <a href="faq.html">Frequently Asked Questions (FAQ)</a> | 
-    <a href="terms.html">Terms of Service & Licensing</a>
+    <p>&copy; 2026 Vortex Sonic Metrics LLC. CandidTime is a proprietary enterprise software asset managed exclusively by Vortex Sonic Metrics LLC. All rights reserved.</p>
+    <p>
+        <a href="terms.html">Terms of Service &amp; Compliance</a> | 
+        <a href="faq.html">System Documentation</a>
+    </p>
 </footer>
+<script>
+    function executeRouting(nodeSignature) {
+        const consoleBox = document.getElementById('status-console');
+        consoleBox.style.background = 'var(--success-bg)';
+        consoleBox.style.borderColor = '#bbf7d0';
+        consoleBox.style.color = 'var(--success)';
+        consoleBox.innerHTML = '✔ Success: Ingestion pipeline mapped via ' + nodeSignature + '. Dispatch parameters confirmed under corporate structural guidelines.';
+    }
+</script>
 
 </body>
 </html>
-        
