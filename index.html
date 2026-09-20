@@ -292,10 +292,73 @@
   <!-- B2B Informational Overview Header -->
   <div class="b2b-info-banner">
     <h3>CandidTime™ Automated B2B Dispatch & Scheduling</h3>
-    <!-- COMPLETE FAQ & TERMS OF SERVICE SECTION -->
+    <!-- CandidTime™ Automated B2B Dispatch & Scheduling -->
+<div class="candidtime-container" style="max-width: 900px; margin: 2rem auto; font-family: system-ui, -apple-system, sans-serif; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); overflow: hidden;">
+  
+  <div style="background: #f8fafc; padding: 1.5rem; border-bottom: 1px solid #e2e8f0;">
+    <h3 style="margin: 0 0 0.5rem 0; font-size: 1.25rem;">CandidTime™ Automated B2B Dispatch & Scheduling</h3>
+    <p style="margin: 0; color: #475569; font-size: 0.95rem; line-height: 1.5;">
+      Empower trade contractors and enterprise clients to lock in real-time technical dispatch slots instantly. License includes setup and operation for <strong style="color: #059669;">$499 Setup + $299/mo</strong>.
+    </p>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; padding: 1.5rem;">
+    <!-- Calendar Column -->
+    <div>
+      <div style="font-weight: 600; margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b;">1. Select Dispatch Date</div>
+      <div style="display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; text-align: center;">
+        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">S</div>
+        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">M</div>
+        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">T</div>
+        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">W</div>
+        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">T</div>
+        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">F</div>
+        <div style="font-size: 0.8rem; font-weight: 700; color: #94a3b8;">S</div>
+
+        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; color: #cbd5e1; background: #f8fafc;">27</div>
+        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; color: #cbd5e1; background: #f8fafc;">28</div>
+        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; color: #cbd5e1; background: #f8fafc;">29</div>
+        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; color: #cbd5e1; background: #f8fafc;">30</div>
+        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; font-weight: 500;" onclick="selectDate(this, 'Oct 1, 2026')">1</div>
+        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; font-weight: 500;" onclick="selectDate(this, 'Oct 2, 2026')">2</div>
+        <div style="padding: 10px 0; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; font-weight: 500;" onclick="selectDate(this, 'Oct 3, 2026')">3</div>
+      </div>
+    </div>
+
+    <!-- Routing Blocks Column -->
+    <div>
+      <div style="font-weight: 600; margin-bottom: 1rem; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em; color: #64748b;">2. Choose Live Routing Block</div>
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <button onclick="selectSlot(this, '08:00 AM - 10:00 AM')" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem;">
+          <span>08:00 AM - 10:00 AM</span>
+          <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: #e2e8f0; color: #334155;">NYC Core</span>
+        </button>
+        <button onclick="selectSlot(this, '10:30 AM - 12:30 PM')" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem;">
+          <span>10:30 AM - 12:30 PM</span>
+          <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: #e2e8f0; color: #334155;">Nassau Zone</span>
+        </button>
+        <button onclick="selectSlot(this, '01:30 PM - 03:30 PM')" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem;">
+          <span>01:30 PM - 03:30 PM</span>
+          <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: #e2e8f0; color: #334155;">Suffolk Zone</span>
+        </button>
+        <button onclick="selectSlot(this, '04:00 PM - 06:00 PM')" style="padding: 12px; border: 1px solid #e2e8f0; border-radius: 6px; background: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem;">
+          <span>04:00 PM - 06:00 PM</span>
+          <span style="font-size: 0.75rem; padding: 2px 8px; border-radius: 12px; background: #059669; color: #ffffff;">Express 24/7</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 1rem 1.5rem; background: #f8fafc; border-top: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
+    <div id="selectionSummary" style="font-size: 0.9rem; color: #475569;">Select a date and time slot to preview instant booking.</div>
+    <button id="bookBtn" disabled onclick="confirmBooking()" style="background: #059669; color: white; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer;">1-Click Schedule</button>
+  </div>
+</div> <!-- CandidTime Container CLOSES HERE -->
+
+<!-- SINGLE FAQ & TERMS OF SERVICE SECTION -->
 <div class="site-footer-sections" style="max-width: 900px; margin: 4rem auto 2rem auto; font-family: system-ui, -apple-system, sans-serif;">
   
-  <!-- FAQ Section with all 3 Questions -->
+  <!-- FAQ Section -->
   <section id="faq">
     <h2 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
       <span style="display: inline-block; width: 10px; height: 22px; background-color: #059669; border-radius: 2px;"></span>
@@ -306,8 +369,7 @@
     </p>
 
     <div style="display: flex; flex-direction: column; gap: 1rem;">
-      <!-- Question 1 -->
-      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff; overflow: hidden;">
+      <div style="border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff; overflow: hidden;">
         <button onclick="toggleFaq(this)" style="width: 100%; padding: 1.2rem; background: #ffffff; border: none; text-align: left; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
           <span>How does the setup process work for trade companies?</span>
           <span style="color: #059669; font-size: 1.25rem; font-weight: bold;">+</span>
@@ -317,8 +379,7 @@
         </div>
       </div>
 
-      <!-- Question 2 -->
-      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff; overflow: hidden;">
+      <div style="border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff; overflow: hidden;">
         <button onclick="toggleFaq(this)" style="width: 100%; padding: 1.2rem; background: #ffffff; border: none; text-align: left; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
           <span>Is there a contract or long-term commitment?</span>
           <span style="color: #059669; font-size: 1.25rem; font-weight: bold;">+</span>
@@ -328,8 +389,7 @@
         </div>
       </div>
 
-      <!-- Question 3 -->
-      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff; overflow: hidden;">
+      <div style="border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff; overflow: hidden;">
         <button onclick="toggleFaq(this)" style="width: 100%; padding: 1.2rem; background: #ffffff; border: none; text-align: left; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
           <span>How does CandidTime™ handle dispatch routing for field technicians?</span>
           <span style="color: #059669; font-size: 1.25rem; font-weight: bold;">+</span>
@@ -380,112 +440,23 @@
   </section>
 </div>
 
-<!-- FAQ Click Script -->
+<!-- Scripts -->
 <script>
-  function toggleFaq(button) {
-    const answer = button.nextElementSibling;
-    const isVisible = answer.style.display === 'block';
-    
-    // Close all open answers
-    document.querySelectorAll('.faq-answer').forEach(el => el.style.display = 'none');
-    
-    // Toggle clicked answer
-    answer.style.display = isVisible ? 'none' : 'block';
+  let activeDate = null;
+  let activeSlot = null;
+
+  function selectDate(el, dateStr) {
+    document.querySelectorAll('.calendar-picker div').forEach(d => d.style.background = '#fff');
+    el.style.background = '#ecfdf5';
+    activeDate = dateStr;
+    updateStatus();
   }
-</script>
-    <p>Empower trade contractors and enterprise clients to lock in real-time technical dispatch slots instantly. Our zero-overhead engine syncs direct calendar availability with active region units across NYC, Nassau, and Suffolk.</p>
-  </div>
-<!-- UNIFIED FAQ AND TERMS OF SERVICE SECTION -->
-<div class="site-footer-sections" style="max-width: 900px; margin: 4rem auto 2rem auto; font-family: system-ui, -apple-system, sans-serif;">
-  
-  <!-- FAQ Section -->
-  <section id="faq">
-    <h2 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-      <span style="display: inline-block; width: 10px; height: 22px; background-color: #059669; border-radius: 2px;"></span>
-      Frequently Asked Questions
-    </h2>
-    <p style="font-size: 0.95rem; color: #475569; margin-top: 0; margin-bottom: 1.5rem;">
-      Common queries regarding system integration, dispatch blocks, and service licensing.
-    </p>
 
-    <div style="display: flex; flex-direction: column; gap: 1rem;">
-      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff; overflow: hidden;">
-        <button onclick="toggleFaq(this)" style="width: 100%; padding: 1.2rem; background: #ffffff; border: none; text-align: left; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-          <span>How does the setup process work for trade companies?</span>
-          <span style="color: #059669; font-size: 1.25rem; font-weight: bold;">+</span>
-        </button>
-        <div class="faq-answer" style="display: none; padding: 1rem 1.2rem 1.2rem 1.2rem; background: #f8fafc; border-top: 1px solid #e2e8f0; color: #475569; font-size: 0.95rem; line-height: 1.6;">
-          Once activated, our technical architects configure your custom CandidTime™ scheduling and routing infrastructure directly into your existing operational pipeline within 48 to 72 hours.
-        </div>
-      </div>
-
-      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff; overflow: hidden;">
-        <button onclick="toggleFaq(this)" style="width: 100%; padding: 1.2rem; background: #ffffff; border: none; text-align: left; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-          <span>Is there a contract or long-term commitment?</span>
-          <span style="color: #059669; font-size: 1.25rem; font-weight: bold;">+</span>
-        </button>
-        <div class="faq-answer" style="display: none; padding: 1rem 1.2rem 1.2rem 1.2rem; background: #f8fafc; border-top: 1px solid #e2e8f0; color: #475569; font-size: 0.95rem; line-height: 1.6;">
-          No. We offer a flat production license structure with a fixed monthly rate (<strong style="color: #059669;">$299/mo</strong>) and a one-time setup fee (<strong style="color: #059669;">$499</strong>). You can exit or pause your system license loop at any time.
-        </div>
-      </div>
-
-      <div class="faq-item" style="border: 1px solid #e2e8f0; border-radius: 8px; background: #ffffff; overflow: hidden;">
-        <button onclick="toggleFaq(this)" style="width: 100%; padding: 1.2rem; background: #ffffff; border: none; text-align: left; font-size: 1rem; font-weight: 600; color: #0f172a; cursor: pointer; display: flex; justify-content: space-between; align-items: center;">
-          <span>How does CandidTime™ handle dispatch routing for field technicians?</span>
-          <span style="color: #059669; font-size: 1.25rem; font-weight: bold;">+</span>
-        </button>
-        <div class="faq-answer" style="display: none; padding: 1rem 1.2rem 1.2rem 1.2rem; background: #f8fafc; border-top: 1px solid #e2e8f0; color: #475569; font-size: 0.95rem; line-height: 1.6;">
-          The system automatically matches real-time customer bookings against active operator zones in NYC, Nassau, and Suffolk, placing requests directly into available 24/7 routing blocks without human dispatch overhead.
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Terms of Service Section -->
-  <section id="terms" style="margin-top: 3rem;">
-    <h2 style="font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
-      <span style="display: inline-block; width: 10px; height: 22px; background-color: #059669; border-radius: 2px;"></span>
-      Terms of Service
-    </h2>
-    <p style="font-size: 0.95rem; color: #475569; margin-top: 0; margin-bottom: 1.5rem;">
-      Operating agreement and system usage guidelines for Vortex Sonic Metrics LLC assets.
-    </p>
-
-    <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid #059669; border-radius: 8px; padding: 1.8rem;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-        <div>
-          <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #0f172a;"><span style="color: #059669;">01.</span> License Allocation</h4>
-          <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.5;">
-            Upon payment of the <strong style="color: #059669;">$499 Setup Fee</strong> and recurring <strong style="color: #059669;">$299/month license fee</strong>, Vortex Sonic Metrics LLC grants a non-exclusive license to access and run the operational scheduling and automated routing pipeline.
-          </p>
-        </div>
-
-        <div>
-          <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #0f172a;"><span style="color: #059669;">02.</span> Cancellation & Refund Policy</h4>
-          <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.5;">
-            <strong>Subscription License:</strong> You may cancel your $299/mo subscription at any time. Cancellations take effect at the end of the current billing cycle, and recurring fees are non-refundable.<br><br>
-            <strong>Setup Fee:</strong> The $499 Setup Fee covers initial technical architecture configuration and becomes non-refundable once system setup begins.<br><br>
-            <strong>Dispatch Appointments:</strong> Scheduled CandidTime™ dispatch slots canceled less than 24 hours prior to the booked window are subject to a late-cancellation administrative fee.
-          </p>
-        </div>
-
-        <div>
-          <h4 style="margin: 0 0 0.5rem 0; font-size: 0.95rem; color: #0f172a;"><span style="color: #059669;">03.</span> Security & Uptime</h4>
-          <p style="margin: 0; font-size: 0.88rem; color: #475569; line-height: 1.5;">
-            Vortex Sonic Metrics LLC maintains a zero-overhead, highly resilient cloud architecture aiming for maximum runtime availability for live customer scheduling and routing gateway processing.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<script>
-  function toggleFaq(button) {
-    const answer = button.nextElementSibling;
-    const isVisible = answer.style.display === 'block';
-    document.querySelectorAll('.faq-answer').forEach(el => el.style.display = 'none');
-    answer.style.display = isVisible ? 'none' : 'block';
+  function selectSlot(el, slotStr) {
+    activeSlot = slotStr;
+    updateStatus();
   }
-</script>
+
+  function updateStatus() {
+    const summary = document.getElementById('selectionSummary');
   
