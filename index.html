@@ -23,12 +23,12 @@
         
         .checkout-btn { display: block; text-align: center; background: var(--success); color: #fff; text-decoration: none; padding: 16px; font-size: 1.1rem; font-weight: 700; border-radius: 6px; transition: background 0.2s; margin-top: 25px; }
         .checkout-btn:hover { background: #059669; }
-         /* PREMIUM COMMERCIAL INLINE EMBED LAYOUT CONTAINERS */
+        /* INLINE PROPRIETARY EMBED LAYOUT CONTAINERS */
         .embed-wrapper { background: #fff; border: 1px solid #e2e8f0; border-radius: 20px; padding: 40px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05); margin-top: 20px; }
         .inline-embed-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; margin-top: 30px; }
         @media (max-width: 900px) { .inline-embed-grid { grid-template-columns: 1fr; } }
         
-        /* LEFT COLUMN: ACTIVE RECRUITMENT AND BRAND VALUE */
+        /* BRAND INFORMATION SIDE */
         .info-side { text-align: left; display: flex; flex-direction: column; justify-content: center; }
         .commercial-heading { font-size: 1.8rem; font-weight: 800; color: var(--primary); margin: 0 0 15px 0; line-height: 1.2; }
         .commercial-lead { font-size: 1.05rem; color: #475569; margin: 0 0 30px 0; }
@@ -38,14 +38,29 @@
         .feature-text h4 { margin: 0 0 4px 0; font-size: 1.1rem; color: var(--primary); font-weight: 700; }
         .feature-text p { margin: 0; font-size: 0.95rem; color: #64748b; }
         
-        /* RIGHT COLUMN: RAW PLATFORM WEB ENGINE CANVAS */
-        .engine-side { background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); min-height: 600px; position: relative; }
+        /* IN-HOUSE CALENDAR GRID ENGINE SIDE */
+        .engine-side { background: #ffffff; border-radius: 16px; border: 1px solid #e2e8f0; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.02); min-height: 500px; display: flex; flex-direction: column; justify-content: space-between; text-align: left; }
+        .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px; }
+        .calendar-title { font-weight: 800; color: var(--primary); font-size: 1.2rem; }
         
+        .days-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; text-align: center; }
+        .day-label { font-size: 0.75rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; }
+        .day-cell { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 5px; font-weight: 700; color: #475569; cursor: pointer; transition: all 0.2s; font-size: 0.95rem; }
+        .day-cell:hover { border-color: var(--accent); background: #f0fdf4; color: var(--accent); }
+        .day-cell.active { background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); }
+        .day-cell.disabled { background: #f1f5f9; color: #cbd5e1; cursor: not-allowed; border: none; }
+        
+        .time-tray { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 25px; }
+        .time-slot { border: 1px solid #e2e8f0; background: #fff; padding: 12px; border-radius: 6px; text-align: center; font-weight: 700; font-size: 0.9rem; color: var(--primary); cursor: pointer; transition: all 0.2s; }
+        .time-slot:hover { border-color: var(--success); background: #f0fdf4; color: var(--success); }
+        
+        .console-panel { background: #0f172a; color: #38bdf8; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 0.85rem; margin-top: 25px; border-left: 4px solid var(--accent); min-height: 60px; line-height: 1.4; }
+
         footer { margin-top: 80px; text-align: center; padding: 25px; border-top: 1px solid #e2e8f0; font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <header>
+<header>
     <h1>Vortex Sonic Metrics</h1>
     <p>On-Demand Automated Scheduling Engines for Trade Providers</p>
 </header>
@@ -62,7 +77,7 @@
                 <li><strong>Automated Seat Clearance:</strong> System securely opens canceled slots back up for new paying accounts on autopilot.</li>
             </ul>
         </div>
- <!-- PAYMENT CONTAINER CARD -->
+         <!-- PAYMENT CONTAINER CARD -->
         <div class="card" style="border-top: 4px solid var(--success);">
             <h2>💼 License Activation</h2>
             <p>Secure an active infrastructure node setup for your regional service territory.</p>
@@ -73,59 +88,45 @@
             <a href="PASTE_YOUR_STRIPE_LINK_HERE" class="checkout-btn">Activate Automation System</a>
         </div>
     </div>
-      <!-- THE HIGH-TICKET INLINE EMBED FRAMEWORK ECOSYSTEM -->
+
+    <!-- THE NATIVE INTERACTIVE COMPONENT LAYER -->
     <div class="embed-wrapper">
         <div class="inline-embed-grid">
             
-            <!-- LEFT SCREEN: BRAND VALUE AND ARCHITECTURE METRICS -->
+            <!-- LEFT COLUMN: ARCHITECTURE VALUES -->
             <div class="info-side">
-                <h3 class="commercial-heading">Connect with our active regional infrastructure nodes.</h3>
-                <p class="commercial-lead">Experience the immediate speed of the CandidTime™ scheduling engine interface. Test the live calendar deployment module on the right to see exactly how consumers secure field dates seamlessly on autopilot.</p>
+                <h3 class="commercial-heading">Proprietary CandidTime™ Operational Layer</h3>
+                <p class="commercial-lead">Interact directly with our standalone booking matrix interface on the right. This module simulates how customers secure immediate dispatch allocations on absolute autopilot without voice interaction logs.</p>
                 
-                <!-- FEATURE SEGMENT 1 -->
                 <div class="feature-row">
                     <div class="feature-icon">✓</div>
                     <div class="feature-text">
-                        <h4>Automated Intake Sync</h4>
-                        <p>Inbound service data captures natively inside the customer browser layer and maps straight to internal calendar directories.</p>
-                        </div>
-                </div>
-                
-                <!-- FEATURE SEGMENT 2 -->
-                <div class="feature-row">
-                    <div class="feature-icon">✓</div>
-                    <div class="feature-text">
-                        <h4>Structure Shift Layer</h4>
-                        <p>Allows consumers to adjust active date allocations in real-time. Database cells shuffle automatically without manual oversight.</p>
+                        <h4>Zero External Branding</h4>
+                        <p>No third-party trackers, widgets, or logos. The software ecosystem belongs exclusively to your corporate brand name footprint.</p>
                     </div>
                 </div>
                 
-                <!-- FEATURE SEGMENT 3 -->
                 <div class="feature-row">
                     <div class="feature-icon">✓</div>
                     <div class="feature-text">
-                        <h4>Seat Clearance Routing</h4>
-                        <p>Late-night cancellations purge from server logs instantly, opening empty operational frames back up to the public index.</p>
+                        <h4>Immediate Response Routing</h4>
+                        <p>Data events resolve client-side instantly inside the web viewport, driving maximum customer submission speed.</p>
                     </div>
                 </div>
             </div>
             
-            <!-- RIGHT SCREEN: DYNAMIC DIRECT LIVE INLINE WIDGET ENGINE -->
+            <!-- RIGHT COLUMN: NATIVE CALENDAR DISPLAY ENGINE -->
             <div class="engine-side">
-                <iframe src="https://calendly.com" width="100%" height="600" frameborder="0" style="border:none; border-radius: 16px;"></iframe>
-            </div>
-            
-        </div>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2026 Vortex Sonic Metrics LLC. CandidTime™ is a proprietary software infrastructure asset operated exclusively by Vortex Sonic Metrics LLC. All rights reserved.</p>
-    <div style="margin-top: 15px;">
-        <a href="faq.html" style="color: var(--accent); text-decoration: underline; font-weight: 700; margin: 0 15px; font-size: 1rem;">👉 Click to View: Frequently Asked Questions (FAQ)</a>
-        <span style="color: #cbd5e1;">|</span>
-        <a href="terms.html" style="color: var(--accent); text-decoration: underline; font-weight: 700; margin: 0 15px; font-size: 1rem;">👉 Click to View: Terms of Service & Licensing</a>
-    </div>
-</footer>
-</body>
-</html>
+                <div>
+                    <div class="calendar-header">
+                        <span class="calendar-title">📅 Select Session Parameters</span>
+                        <span style="font-size: 0.8rem; font-weight: 700; color: var(--success); background: #e6f4ea; padding: 4px 10px; border-radius: 12px;">CandidTime™ Engine v1.0</span>
+                    </div>
+                    <!-- CALENDAR INTERFACE CELLS -->
+                    <div class="days-grid">
+                        <span class="day-label">Mon</span><span class="day-label">Tue</span><span class="day-label">Wed</span><span class="day-label">Thu</span><span class="day-label">Fri</span><span class="day-label">Sat</span><span class="day-label">Sun</span>
+                        
+                        <button class="day-cell disabled" disabled>21</button>
+                        <button class="day-cell disabled" disabled>22</button>
+                        <button class="day-cell active" onclick="selectDate(23)">23</button>
+                        <button class="day-cell" onclick="selectDate(24)">24</button>
